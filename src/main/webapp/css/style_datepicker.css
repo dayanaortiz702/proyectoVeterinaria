@@ -1,0 +1,106 @@
+
+@import url(https://fonts.googleapis.com/css?family=Lato:400,300,300italic,400italic,600,600italic,700,700italic,800,800italic);
+
+@import url(line-icons.css);
+/*date picker*/
+
+
+
+
+
+.add-on {
+
+    border: 1px solid #E2E2E4;
+
+    border-radius: 4px;
+
+    -webkit-border-radius: 4px;
+
+    float: right;
+
+    margin-right: -37px;
+
+    margin-top: -34px;
+
+    padding: 8px;
+
+    text-align: center;
+
+    background: #EEEEEE;
+
+}
+
+
+
+.daterangepicker .ranges .range_inputs > div:nth-child(2) {
+
+    margin-bottom: 10px;
+
+    padding-left: 0px;
+
+}
+
+
+
+.daterangepicker .ranges label {
+
+    padding-bottom: 0;
+
+    padding-top: 8px;
+
+}
+
+
+
+
+
+.daterangepicker td.active, .daterangepicker td.active:hover,
+
+.datepicker td.active:hover, .datepicker td.active:hover:hover, .datepicker td.active:active, .datepicker td.active:hover:active, .datepicker td.active.active, .datepicker td.active.active:hover, .datepicker td.active.disabled, .datepicker td.active.disabled:hover, .datepicker td.active[disabled], .datepicker td.active[disabled]:hover,
+
+.datepicker td span.active:hover, .datepicker td span.active:active, .datepicker td span.active.active, .datepicker td span.active.disabled, .datepicker td span.active[disabled]{
+
+    background: #688a7e;
+
+}
+
+
+
+.daterangepicker .calendar th, .daterangepicker .calendar td {
+
+    font-family: 'Lato', sans-serif;
+
+    font-weight: 300;
+
+    text-align: center;
+
+    white-space: nowrap;
+
+}
+
+
+
+.daterangepicker td.active, .daterangepicker td.active:hover, .datepicker td.active, .datepicker td.active:hover, .datepicker td span.active {
+
+    text-shadow: none;
+
+}
+
+
+
+.datepicker th.switch {
+
+    width: 125px;
+
+}
+
+
+
+.datepicker td span {
+
+    height: 40px;
+
+    line-height: 40px;
+
+}
+

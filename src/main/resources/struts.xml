@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+"-//Apache Software Foundation//DTD Struts Configuration 2.5//EN"
+"http://struts.apache.org/dtds/struts-2.5.dtd">
+
+<struts>
+
+	  <constant name="struts.enable.DynamicMethodInvocation" value="false"/>
+	  <constant name="struts.devMode" value="false"/>
+
+
+	<package name="pages" namespace="/pages" extends="struts-default">
+
+        <result-types>
+            <result-type name="tiles" class="org.apache.struts2.views.tiles.TilesResult"/>
+        </result-types>
+
+        <action name="HelloWorld">
+            <result type="tiles">hello</result>
+        </action>
+
+<!-- 		MANTENIMIENTO EMPLEADO -->
+<!-- 		Para registrar al empleado, llama al metodo que lo registra, pero retorna un jsp, ya que dentro de ese jsp llama
+			a otro action que lista todos los registros (a_reportEmpleado)
+			en el caso de  result = "tiles"
+			el result es de tipo tiles para que redireccione al "definition" que se encuentra en el  tiles.xml
+			tiles.xml contiene la maquetación de toda la interfaz, por ejemplo "t_reportEmpleado" es un definition
+			que va a llamar siempre al jsp ReportEmpleado.
+			Todos los definitions llaman o retornan un jsp
+			mientras que los actions pueden retornar un jsp o un definition, siempre y cuando indicando que es de tipo tyles-->
+			
+		<action name="registerEmpleado" class="pe.edu.cibertec.action.EmpleadoAction">
+			<result name="REGISTER">/pages/listaEmpleado.jsp</result>
+		</action>
+		
+<!-- 		Para visualizar la página que registra al empleado -->
+		<action name="a_registerEmpleado">
+			<result type="tiles">t_registraEmpleado</result>
+		</action>
+		
+<!-- 		Para visualizar la página que actualiza al empleado. Cuando se llaman a vistas no es necesario indicar la clase y 
+			el método, pero este action si necesita un metodo ya que se van a rellenar campos de el jsp de actualizar,
+			y esto lo realiza con un metodo. Retorna un definition, que vendria a ser la vista-->
+		<action name="updateEmpleado" method="ActualizarEmpleado" class="pe.edu.cibertec.action.EmpleadoAction">
+ 			<result name="UPDATE" type="tiles">t_actualizaEmpleado</result>
+		</action>
+		
+<!-- 		Para actualizar el empleado, usa el mismo método ya que en ese método se hace la actualizacion y el llenado de cajas de texto
+			sin embargo se llama a un jsp que redirecciona a otro action, similar a lo de registrar -->
+		<action name="updateEmpleadoList" method="ActualizarEmpleado" class="pe.edu.cibertec.action.EmpleadoAction">
+			<result name="UPDATE">/pages/listaEmpleado.jsp</result>
+		</action>
+		
+<!-- 		para visualizar el listado de empleados (letras pequeñas)-->
+		<action name="a_reportEmpleado2" method="listadoEmpleados" class="pe.edu.cibertec.action.EmpleadoAction">
+			<result name="REPORT">/pages/listaEmpleado.jsp</result>
+		</action>
+<!-- 		para visualizar el listado de empleados. letras grandes-->		
+		<action name="a_reportEmpleado" method="listadoEmpleados" class="pe.edu.cibertec.action.EmpleadoAction">
+			<result name="REPORT" type="tiles">t_reportEmpleado</result>
+		</action>
+		
+<!-- 		para eliminar empleado -->
+		<action name="deleteEmpleado" method="EliminarEmpleado" class="pe.edu.cibertec.action.EmpleadoAction">
+			<result name="DELETE">/pages/listaEmpleado.jsp</result>
+		</action>
+
+<!-- 	MANTENIMIENTO PACIENTE -->
+	
+		<action name="a_registerPaciente" >
+			<result type="tiles">t_registraPaciente</result>
+		</action>
+		<action name="registerPaciente" method="RegistrarPaciente" class="pe.edu.cibertec.action.PacienteAction">
+			<result name="REGISTER">/pages/listaPaciente.jsp</result>
+		</action>
+		
+		<action name="updatePaciente" method="ActualizarPaciente" class="pe.edu.cibertec.action.PacienteAction">
+ 			<result name="UPDATE" type="tiles">t_actualizaPaciente</result>
+		</action>
+		<action name="updatePacienteList" method="ActualizarPaciente" class="pe.edu.cibertec.action.PacienteAction">
+			<result name="UPDATE">/pages/listaPaciente.jsp</result>
+		</action>
+		
+		<action name="a_reportPaciente2" method="ListarPaciente" class="pe.edu.cibertec.action.PacienteAction">
+			<result name="REPORT">/pages/listaPaciente.jsp</result>
+		</action>
+		<action name="a_reportPaciente" method="ListarPaciente" class="pe.edu.cibertec.action.PacienteAction">
+			<result name="REPORT" type="tiles">t_reportPaciente</result>
+		</action>
+		
+		<action name="deletePaciente" method="EliminarPaciente" class="pe.edu.cibertec.action.PacienteAction">
+			<result name="DELETE">/pages/listaPaciente.jsp</result>
+		</action>
+		
+
+<!-- 	MANTENIMIENTO PROPIETARIO -->
+		<action name="a_registerPropietario">
+			<result type="tiles">t_registraPropietario</result>
+		</action>
+		<action name="registerPropietario" method="RegistrarPropietario" class="pe.edu.cibertec.action.PropietarioAction">
+			<result name="REGISTER">/pages/listaPropietario.jsp</result>
+		</action>
+		
+		<action name="updatePropietario" method="ActualizarPropietario" class="pe.edu.cibertec.action.PropietarioAction">
+ 			<result name="UPDATE" type="tiles">t_actualizaPropietario</result>
+		</action>
+		<action name="updatePropietarioList" method="ActualizarPropietario" class="pe.edu.cibertec.action.PropietarioAction">
+			<result name="UPDATE">/pages/listaPropietario.jsp</result>
+		</action>
+		
+		<action name="a_reportPropietario2" method="ListarPropietario" class="pe.edu.cibertec.action.PropietarioAction">
+			<result name="REPORT">/pages/listaPropietario.jsp</result>
+		</action>
+		<action name="a_reportPropietario" method="ListarPropietario" class="pe.edu.cibertec.action.PropietarioAction">
+			<result name="REPORT" type="tiles">t_reportPropietario</result>
+		</action>
+		
+		<action name="deletePropietario" method="EliminarPropietario" class="pe.edu.cibertec.action.PropietarioAction">
+			<result name="DELETE">/pages/listaPropietario.jsp</result>
+		</action>
+		
+
+<!-- 	MANTENIMIENTO PRODUCTO -->
+		<action name="a_registerProducto">
+			<result type="tiles">t_registraProducto</result>
+		</action>
+		<action name="registerProducto" method="RegistrarProducto" class="pe.edu.cibertec.action.ProductoAction">
+			<result name="REGISTER">/pages/listaProducto.jsp</result>
+		</action>
+		
+		<action name="updateProducto" method="ActualizarProducto" class="pe.edu.cibertec.action.ProductoAction">
+ 			<result name="UPDATE" type="tiles">t_actualizaProducto</result>
+		</action>
+		<action name="updateProductoList" method="ActualizarProducto" class="pe.edu.cibertec.action.ProductoAction">
+			<result name="UPDATE">/pages/listaProducto.jsp</result>
+		</action>
+		
+		<action name="a_reportProducto2" method="ListarProducto" class="pe.edu.cibertec.action.ProductoAction">
+			<result name="REPORT">/pages/listaProducto.jsp</result>
+		</action>
+		<action name="a_reportProducto" method="ListarProducto" class="pe.edu.cibertec.action.ProductoAction">
+			<result name="REPORT" type="tiles">t_reportProducto</result>
+		</action>
+		
+		<action name="deleteProducto" method="EliminarProducto" class="pe.edu.cibertec.action.ProductoAction">
+			<result name="DELETE">/pages/listaProducto.jsp</result>
+		</action>
+		
+
+<!-- 	MANTENIMIENTO PROVEEDOR -->
+		<action name="a_registerProveedor">
+			<result type="tiles">t_registraProveedor</result>
+		</action>
+		<action name="registerProveedor" method="RegistrarProveedor" class="pe.edu.cibertec.action.ProveedorAction">
+			<result name="REGISTER">/pages/listaProveedor.jsp</result>
+		</action>
+		
+		<action name="updateProveedor" method="ActualizarProveedor" class="pe.edu.cibertec.action.ProveedorAction">
+ 			<result name="UPDATE" type="tiles">t_actualizaProveedor</result>
+		</action>
+		<action name="updateProveedorList" method="ActualizarProveedor" class="pe.edu.cibertec.action.ProveedorAction">
+			<result name="UPDATE">/pages/listaProveedor.jsp</result>
+		</action>
+		
+		<action name="a_reportProveedor2" method="ListarProveedor" class="pe.edu.cibertec.action.ProveedorAction">
+			<result name="REPORT">/pages/listaProveedor.jsp</result>
+		</action>
+		<action name="a_reportProveedor" method="ListarProveedor" class="pe.edu.cibertec.action.ProveedorAction">
+			<result name="REPORT" type="tiles">t_reportProveedor</result>
+		</action>
+		
+		<action name="deleteProveedor" method="EliminarProveedor" class="pe.edu.cibertec.action.ProveedorAction">
+			<result name="DELETE">/pages/listaProveedor.jsp</result>
+		</action>
+		
+
+    </package>
+	
+
+	
+</struts>  
