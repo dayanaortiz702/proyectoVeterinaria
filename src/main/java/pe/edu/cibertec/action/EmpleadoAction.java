@@ -23,28 +23,11 @@ public class EmpleadoAction extends ActionSupport{
 	private List<EmpleadoBean> beanList = null;
 	private List<TipoDocumentoBean> tipoList = new ArrayList<>();
 	private List<String> listaPrueba;
-	public List<TipoDocumentoBean> getTipoList() {
-		return tipoList;
-	}
-
-	public void setTipoList(List<TipoDocumentoBean> tipoList) {
-		this.tipoList = tipoList;
-	}
-
-	public TipoDocumentoDAO getAdminTipo() {
-		return adminTipo;
-	}
-
-	public void setAdminTipo(TipoDocumentoDAO adminTipo) {
-		this.adminTipo = adminTipo;
-	}
-
-	private ResultSet rs = null;
+	
+		private ResultSet rs = null;
 	private EmpleadoBean bean;
 	private boolean noData = false;
-	EmpleadoDAO adminRegister = null;
-	EmpleadoDAO adminReport;
-	EmpleadoDAO adminUpdate;
+	EmpleadoDAO admin = null;
 	TipoDocumentoDAO adminTipo;
 	int ctr = 0;
 	String submitType;
@@ -52,10 +35,10 @@ public class EmpleadoAction extends ActionSupport{
 
 	@Override
 	public String execute() throws Exception {
-		adminRegister = new EmpleadoDAO();
+		admin = new EmpleadoDAO();
 
 		try {
-			ctr = adminRegister.registerEmpleado(nombres, apellidos, tipodoc, documento, telefono, correo, direccion,
+			ctr = admin.registerEmpleado(nombres, apellidos, tipodoc, documento, telefono, correo, direccion,
 										fecha_nac, fecha_ingreso, idcargo, idusuario);
 			if (ctr > 0) {
 				msg = "Registration Successfull";
@@ -68,19 +51,12 @@ public class EmpleadoAction extends ActionSupport{
 		return "REGISTER";
 	}
 
-	public List<String> getListaPrueba() {
-		return listaPrueba;
-	}
-
-	public void setListaPrueba(List<String> listaPrueba) {
-		this.listaPrueba = listaPrueba;
-	}
 
 	public String listadoEmpleados() throws Exception {
 		try {
-			adminReport = new EmpleadoDAO();
+			admin = new EmpleadoDAO();
 			beanList = new ArrayList<EmpleadoBean>();
-			rs = adminReport.report();
+			rs = admin.report();
 			int i = 0;
 			if (rs != null) {
 				while (rs.next()) {
@@ -113,9 +89,9 @@ public class EmpleadoAction extends ActionSupport{
 	}
 	
 	public String EliminarEmpleado() throws Exception {
-		adminReport = new EmpleadoDAO();
+		admin = new EmpleadoDAO();
 		try {
-			int isDeleted = adminReport.deleteEmpleado(idEmpleado);
+			int isDeleted = admin.deleteEmpleado(idEmpleado);
 			if (isDeleted > 0) {
 				msg = "Record deleted successfully";
 			} else {
@@ -128,10 +104,10 @@ public class EmpleadoAction extends ActionSupport{
 	}
 	
 	public String ActualizarEmpleado() throws Exception {
-		adminUpdate = new EmpleadoDAO();
+		admin = new EmpleadoDAO();
 		try {
 			if (submitType.equals("updatedata")) {
-				rs = adminUpdate.detalleEmpleado(idEmpleado.trim());
+				rs = admin.detalleEmpleado(idEmpleado.trim());
 				if (rs != null) {
 					while (rs.next()) {
 					
@@ -150,7 +126,7 @@ public class EmpleadoAction extends ActionSupport{
 					}
 				}
 			} else {
-				int i = adminUpdate.updateEmpleado(nombres, apellidos, tipodoc, documento, telefono, correo, direccion,
+				int i = admin.updateEmpleado(nombres, apellidos, tipodoc, documento, telefono, correo, direccion,
 						fecha_nac, fecha_ingreso, idcargo, idusuario, idEmpleado);
 				if (i > 0) {
 					msg = "Record Updated Successfuly";
@@ -220,24 +196,6 @@ public class EmpleadoAction extends ActionSupport{
 
 	public void setMsg(String msg) {
 		this.msg = msg;
-	}
-
-
-
-	public EmpleadoDAO getAdminRegister() {
-		return adminRegister;
-	}
-
-	public void setAdminRegister(EmpleadoDAO adminRegister) {
-		this.adminRegister = adminRegister;
-	}
-
-	public EmpleadoDAO getAdminReport() {
-		return adminReport;
-	}
-
-	public void setAdminReport(EmpleadoDAO adminReport) {
-		this.adminReport = adminReport;
 	}
 
 	public int getCtr() {
@@ -336,15 +294,30 @@ public class EmpleadoAction extends ActionSupport{
 		this.submitType = submitType;
 	}
 
-	public EmpleadoDAO getAdminUpdate() {
-		return adminUpdate;
+	public List<TipoDocumentoBean> getTipoList() {
+		return tipoList;
 	}
 
-	public void setAdminUpdate(EmpleadoDAO adminUpdate) {
-		this.adminUpdate = adminUpdate;
+	public void setTipoList(List<TipoDocumentoBean> tipoList) {
+		this.tipoList = tipoList;
 	}
 
-	
+	public TipoDocumentoDAO getAdminTipo() {
+		return adminTipo;
+	}
+
+	public void setAdminTipo(TipoDocumentoDAO adminTipo) {
+		this.adminTipo = adminTipo;
+	}
+
+
+	public List<String> getListaPrueba() {
+		return listaPrueba;
+	}
+
+	public void setListaPrueba(List<String> listaPrueba) {
+		this.listaPrueba = listaPrueba;
+	}
 
 	
 }

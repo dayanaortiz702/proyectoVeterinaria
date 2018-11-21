@@ -54,7 +54,7 @@ public class ProveedorDAO {
 	public ResultSet detalleProveedor(String idproveedor) throws SQLException, Exception {
 		ResultSet rs = null;
 		try {
-			String sql = "SELECT idProveedor, idTipoDocumento,nroDocumento,razon_social,telefono,direccion from tb_proveedor WHERE idProveedor=?";
+			String sql = "SELECT * from tb_proveedor WHERE idProveedor=?";
 			PreparedStatement ps = con.getConnection().prepareStatement(sql);
 			ps.setString(1, idproveedor);
 			rs = ps.executeQuery();
@@ -70,24 +70,25 @@ public class ProveedorDAO {
 	}
 
 	// update
-	public int updateProveedor(String tipoDocumento, String nroDocumento, String razonSocial, String telefono,
-			String direccion,String idproveedor) throws SQLException, Exception {
-
+	public int updateProveedor(String idTipoDocumento, String nroDocumento, String razonSocial, String telefono,
+			String direccion, String idproveedor) throws SQLException, Exception {
+		
 		con.getConnection().setAutoCommit(false);
 		int i = 0;
 		try {
-			String sql = "UPDATE tb_proveedor SET idTipoDocumento=?, nroDocumento=?"
-					+ "razon_social=?, telefono=?, direccion=? WHERE idProveedor=?";
-
+			String sql = "UPDATE tb_proveedor SET idTipoDocumento=?, nroDocumento=?, razon_social=?, "
+									+ "telefono=?, direccion = ? WHERE idProveedor=?";
+			
 			PreparedStatement ps = con.getConnection().prepareStatement(sql);
-
-			ps.setString(1, tipoDocumento);
+			
+			
+			ps.setString(1, idTipoDocumento);
 			ps.setString(2, nroDocumento);
-			ps.setString(3, razonSocial);
+			ps.setString(3, razonSocial);				
 			ps.setString(4, telefono);
 			ps.setString(5, direccion);
 			ps.setString(6, idproveedor);
-
+			
 			i = ps.executeUpdate();
 			return i;
 		} catch (Exception e) {

@@ -19,9 +19,6 @@ public class PacienteAction extends ActionSupport{
 	private String msg = "";
 	
 	PacienteDAO admin = null;
-	PacienteDAO admin1;
-	PacienteDAO admin2;
-	PacienteDAO admin3;
 
 	String submitType;
 	
@@ -51,10 +48,10 @@ public class PacienteAction extends ActionSupport{
 	}
 	
 	public String ListarPaciente() throws Exception {
-		admin1 = new PacienteDAO();
+		admin = new PacienteDAO();
 		try {
 			beanList = new ArrayList<PacienteBean>();
-			rs = admin1.reportPaciente();
+			rs = admin.reportPaciente();
 			int i = 0;
 			if (rs != null) {
 				while (rs.next()) {
@@ -91,9 +88,9 @@ public class PacienteAction extends ActionSupport{
 	
 	
 	public String EliminarPaciente() throws Exception {
-		admin2 = new PacienteDAO();
+		admin = new PacienteDAO();
 		try {
-			int isDeleted = admin2.deletePaciente(idPaciente);
+			int isDeleted = admin.deletePaciente(idPaciente);
 			if (isDeleted > 0) {
 				msg = "Record deleted successfully";
 			} else {
@@ -106,10 +103,10 @@ public class PacienteAction extends ActionSupport{
 	}
 	
 	public String ActualizarPaciente() throws Exception {
-		admin3 = new PacienteDAO();
+		admin = new PacienteDAO();
 		try {
 			if (submitType.equals("updatedata")) {
-				rs = admin3.detallePaciente(idPaciente);
+				rs = admin.detallePaciente(idPaciente);
 				if (rs != null) {
 					while (rs.next()) {
 						
@@ -122,7 +119,7 @@ public class PacienteAction extends ActionSupport{
 					}
 				}
 			} else {
-				int i = admin3.updatePaciente(color, particularidad, peso, 
+				int i = admin.updatePaciente(color, particularidad, peso, 
 						 turgencia_piel, estado_reproductivo, idPaciente );
 				if (i > 0) {
 					msg = "Record Updated Successfuly";

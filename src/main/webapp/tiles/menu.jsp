@@ -1,14 +1,4 @@
 <%@ taglib prefix="tiles" uri="http://tiles.apache.org/tags-tiles" %>
-<!-- <h4>Menu</h4> -->
-<%-- <tiles:insertAttribute name="title"/> --%>
-<!-- <ul> -->
-<!-- 		<li> -->
-<%-- 			<a href="${pageContext.request.contextPath}/HelloWorld"> --%>
-<!-- 				Inicio -->
-<!-- 			</a> -->
-<!-- 		</li>	 -->
-					
-<!-- </ul> -->
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
@@ -49,7 +39,7 @@
 
 	<!--sidebar start-->
     <aside>
-      <div id="sidebar" class="nav-collapse list-unstyled components">
+      <div id="sidebar" class="nav-collapse">
         <!-- sidebar menu start-->
         <ul class="sidebar-menu">
           <li class="active">
@@ -59,12 +49,13 @@
                       </a>
           </li>
           <li class="">
-	            <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
+	            <a href="#" data-toggle="collapse" data-target="#mantenimiento" aria-expanded="false" class="dropdown-toggle">
 	               <i class="icon_document_alt"></i>
 	               <span>Mantenimiento</span>
 	               <span class="menu-arrow arrow_carrot-right"></span>
 	            </a>
-	            <ul class="collapse list-unstyled" id="homeSubmenu">	              
+	            
+	            <ul class="sub-menu collapse" id="mantenimiento">	              
 	              <li><a class="" href="${pageContext.request.contextPath}/pages/a_reportPaciente2.action">Pacientes</a></li>
 <!-- 	              <li><a class="" href="form_validation.html">Historia Clínica</a></li> -->
 	              <li><a class="" href="${pageContext.request.contextPath}/pages/a_reportPropietario2.action">Propietarios</a></li>
@@ -74,25 +65,25 @@
 	              
 	            </ul>
           </li>
-          <li class="">
-	            <a href="#homeSubmenu2" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
+          <li class="sub-menu">
+	            <a href="#" data-target="#seguridad" class="dropdown-toggle" data-toggle="collapse" aria-expanded="false" >
                   <i class="icon_lock"></i>
                   <span>Seguridad</span>
                   <span class="menu-arrow arrow_carrot-right"></span>
 	            </a>
-	            <ul class="collapse list-unstyled" id="homeSubmenu2">	
+	            <ul class="sub" id="seguridad">	
 	              <li><a class="" href="#">Usuarios</a></li>
 	              <li><a class="" href="#">Perfiles</a></li>
 	            </ul>
           </li>
           
           <li class="">
-       			<a href="#homeSubmenu3" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
+       			<a href="#" data-toggle="collapse" data-target="#configuracion" aria-expanded="false" class="dropdown-toggle">
                   <i class="icon_tools"></i>
                   <span>Configuración</span>
                   <span class="menu-arrow arrow_carrot-right"></span>
                 </a>
-	            <ul class="collapse list-unstyled" id="homeSubmenu3">	
+	            <ul class="sub-menu collapse" id="configuracion">	
 	              <li><a class="" href="#">Distrito</a></li>
 	              <li><a class="" href="#">Tipo de paciente</a></li>
 	              <li><a class="" href="#">Unidad de medida</a></li>
@@ -103,7 +94,7 @@
 	              <li><a class="" href="#">Categoria</a></li>
 	            </ul>
           </li>
-
+		</ul>
           
         <!-- sidebar menu end-->
       </div>

@@ -7,17 +7,13 @@
   <link rel="shortcut icon" href="img/favicon.png">
 	
   <title>Proyecto Veterinaria</title>
-  
+   
   <style type="text/css">
   	#inicio {
   		height: 100%; 
 	    overflow-y: scroll auto;
 	}
-/* 	section { */
-/* 	 		          /* Just for the demo          */ */ */
-/* 		    overflow-y: auto;    /* Trigger vertical scroll    */ */ */
-/* 	    overflow-x: hidden;  /* Hide the horizontal scroll */ */ */
-/* 		}  */
+
   </style>
 </head>
 
@@ -82,8 +78,15 @@
         <!--/.row-->
            
     </section>
+    </section>
     <!--main content end-->
 	</div>
-  
+	
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+		
+	<!-- jquery ui -->
+	<script src="../js/jquery-ui-1.9.2.custom.min.js"></script>	
+	 
 </body>
 </html>

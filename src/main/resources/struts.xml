@@ -7,17 +7,22 @@
 
 	  <constant name="struts.enable.DynamicMethodInvocation" value="false"/>
 	  <constant name="struts.devMode" value="false"/>
+	
 
-
-	<package name="pages" namespace="/pages" extends="struts-default">
+	<package name="pages" namespace="/pages" extends="struts-default, json-default">
 
         <result-types>
             <result-type name="tiles" class="org.apache.struts2.views.tiles.TilesResult"/>
         </result-types>
-
+		
+		<action name="cargarComboDocumento" class="pe.edu.cibertec.action.TipoDocumentoAction" method="cargarTipoDoc" >
+			<result type="json"></result>
+		</action>
+        
         <action name="HelloWorld">
             <result type="tiles">hello</result>
         </action>
+       
 
 <!-- 		MANTENIMIENTO EMPLEADO -->
 <!-- 		Para registrar al empleado, llama al metodo que lo registra, pero retorna un jsp, ya que dentro de ese jsp llama
@@ -27,7 +32,7 @@
 			tiles.xml contiene la maquetación de toda la interfaz, por ejemplo "t_reportEmpleado" es un definition
 			que va a llamar siempre al jsp ReportEmpleado.
 			Todos los definitions llaman o retornan un jsp
-			mientras que los actions pueden retornar un jsp o un definition, siempre y cuando indicando que es de tipo tyles-->
+			mientras que los actions pueden retornar un jsp o un definition, siempre y cuando indicando que es de tipo tiles-->
 			
 		<action name="registerEmpleado" class="pe.edu.cibertec.action.EmpleadoAction">
 			<result name="REGISTER">/pages/listaEmpleado.jsp</result>
@@ -46,7 +51,8 @@
 		</action>
 		
 <!-- 		Para actualizar el empleado, usa el mismo método ya que en ese método se hace la actualizacion y el llenado de cajas de texto
-			sin embargo se llama a un jsp que redirecciona a otro action, similar a lo de registrar -->
+			sin embargo se llama a un jsp que redirecciona a otro action, similar a lo de registrar 
+			el result, es un reportEmpleado, ya que cada vez que sea actualice, se va a redireccionar al listado de empleados-->
 		<action name="updateEmpleadoList" method="ActualizarEmpleado" class="pe.edu.cibertec.action.EmpleadoAction">
 			<result name="UPDATE">/pages/listaEmpleado.jsp</result>
 		</action>
@@ -55,6 +61,7 @@
 		<action name="a_reportEmpleado2" method="listadoEmpleados" class="pe.edu.cibertec.action.EmpleadoAction">
 			<result name="REPORT">/pages/listaEmpleado.jsp</result>
 		</action>
+		
 <!-- 		para visualizar el listado de empleados. letras grandes-->		
 		<action name="a_reportEmpleado" method="listadoEmpleados" class="pe.edu.cibertec.action.EmpleadoAction">
 			<result name="REPORT" type="tiles">t_reportEmpleado</result>

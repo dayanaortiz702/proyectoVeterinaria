@@ -18,9 +18,6 @@ public class ProveedorAction extends ActionSupport{
 	private String idProveedor;
 	private String msg = "";
 	ProveedorDAO admin = null;
-	ProveedorDAO admin1;
-	ProveedorDAO admin2;
-	ProveedorDAO admin3;
 	String submitType;
 	ResultSet rs = null;
 	ProveedorBean bean = null;
@@ -45,17 +42,17 @@ public class ProveedorAction extends ActionSupport{
 	}
 	
 	public String ListarProveedor() throws Exception {
-		admin1 = new ProveedorDAO();
+		admin = new ProveedorDAO();
 		try {
 			beanList = new ArrayList<ProveedorBean>();
-			rs = admin1.report();
+			rs = admin.report();
 			int i = 0;
 			if (rs != null) {
 				while (rs.next()) {
 					i++;
 					bean = new ProveedorBean();
-					bean.setIdProveedor(rs.getInt("idProveedor"));
-					bean.setIdTipoDocumento(rs.getInt("idTipoDocumento"));
+					bean.setIdProveedor(rs.getString("idProveedor"));
+					bean.setIdTipoDocumento(rs.getString("idTipoDocumento"));
 					bean.setNroDocumento(rs.getString("nroDocumento"));
 					bean.setRazonSocial(rs.getString("razon_social"));
 					bean.setTelefono(rs.getString("telefono"));
@@ -75,9 +72,9 @@ public class ProveedorAction extends ActionSupport{
 	}
 	
 	public String EliminarProveedor() throws Exception {
-		admin2 = new ProveedorDAO();
+		admin = new ProveedorDAO();
 		try {
-			int isDeleted = admin2.deleteProveedor(idProveedor);
+			int isDeleted = admin.deleteProveedor(idProveedor);
 			if (isDeleted > 0) {
 				msg = "Record deleted successfully";
 			} else {
@@ -90,10 +87,10 @@ public class ProveedorAction extends ActionSupport{
 	}
 	
 	public String ActualizarProveedor() throws Exception {
-		admin3 = new ProveedorDAO();
+		admin = new ProveedorDAO();
 		try {
 			if (submitType.equals("updatedata")) {
-				rs = admin3.detalleProveedor(idProveedor.trim());
+				rs = admin.detalleProveedor(idProveedor.trim());
 				if (rs != null) {
 					while (rs.next()) {
 						tipoDoc = rs.getString("idTipoDocumento");
@@ -105,7 +102,7 @@ public class ProveedorAction extends ActionSupport{
 					}
 				}
 			} else {
-				int i = admin3.updateProveedor(tipoDoc, documento, razonsocial, telefono, 
+				int i = admin.updateProveedor(tipoDoc, documento, razonsocial, telefono, 
 										direccion, idProveedor);
 				if (i > 0) {
 					msg = "Record Updated Successfuly";

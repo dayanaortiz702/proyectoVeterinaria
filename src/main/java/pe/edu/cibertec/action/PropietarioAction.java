@@ -19,10 +19,7 @@ public class PropietarioAction extends ActionSupport {
 	private String nombres, apellidos, telefono, correo, tipoDoc, documento;
 	private String idPropietario;
 	private String msg = "";
-	PropietarioDAO admin = null;
-	PropietarioDAO admin1 = new PropietarioDAO();
-	PropietarioDAO admin2 = new PropietarioDAO();
-	PropietarioDAO admin3 = new PropietarioDAO();	
+	private PropietarioDAO admin = null;
 	
 	private List<TipoDocumentoBean> lstTipoDoc;
 	
@@ -52,9 +49,10 @@ public class PropietarioAction extends ActionSupport {
 	
 
 	public String ListarPropietario() throws Exception {
+		admin = new PropietarioDAO();
 		try {
 			beanList = new ArrayList<PropietarioBean>();
-			rs = admin1.reportPropietario();
+			rs = admin.reportPropietario();
 			int i = 0;
 			if (rs != null) {
 				while (rs.next()) {
@@ -83,8 +81,9 @@ public class PropietarioAction extends ActionSupport {
 	
 	
 	public String EliminarPropietario() throws Exception {
+		admin= new PropietarioDAO();
 		try {
-			int isDeleted = admin2.deletePropietario(idPropietario);
+			int isDeleted = admin.deletePropietario(idPropietario);
 			if (isDeleted > 0) {
 				msg = "Record deleted successfully";
 			} else {
@@ -97,9 +96,10 @@ public class PropietarioAction extends ActionSupport {
 	}
 	
 	public String ActualizarPropietario() throws Exception {
+		admin= new PropietarioDAO();
 		try {
 			if (submitType.equals("updatedata")) {
-				rs = admin3.detallePropietario(idPropietario.trim());
+				rs = admin.detallePropietario(idPropietario.trim());
 				if (rs != null) {
 					while (rs.next()) {
 						nombres = rs.getString("nombres");
@@ -112,7 +112,7 @@ public class PropietarioAction extends ActionSupport {
 					}
 				}
 			} else {
-				int i = admin3.updatePropietario(telefono, correo, idPropietario);
+				int i = admin.updatePropietario(nombres, apellidos, telefono, correo, tipoDoc, documento, idPropietario);
 				if (i > 0) {
 					msg = "Record Updated Successfuly";
 				} else {
@@ -222,6 +222,16 @@ public class PropietarioAction extends ActionSupport {
 	}
 	public void setNoData(boolean noData) {
 		this.noData = noData;
+	}
+
+
+	public PropietarioDAO getAdmin() {
+		return admin;
+	}
+
+
+	public void setAdmin(PropietarioDAO admin) {
+		this.admin = admin;
 	}
 	
 

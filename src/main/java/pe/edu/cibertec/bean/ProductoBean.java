@@ -8,6 +8,7 @@ public class ProductoBean implements Serializable{
 	 * 
 	 */
 	private static final long serialVersionUID = 6689975047977130168L;
+	
 	private Integer idProducto;
 	private String descripcion;
 	private Integer idMarca;
@@ -17,6 +18,7 @@ public class ProductoBean implements Serializable{
 	private Integer idUniMedida;
 	private Integer stockActual;
 	private Integer stockMinimo;
+	
 	public Integer getIdProducto() {
 		return idProducto;
 	}

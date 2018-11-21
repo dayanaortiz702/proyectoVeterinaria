@@ -18,9 +18,6 @@ public class ProductoAction extends ActionSupport{
 	private String msg = "";
 	
 	ProductoDAO admin = null;
-	ProductoDAO admin1;
-	ProductoDAO admin2;
-	ProductoDAO admin3;
 
 	String submitType;
 	
@@ -47,24 +44,24 @@ public class ProductoAction extends ActionSupport{
 	}
 	
 	public String ListarProducto() throws Exception {
-		admin1 = new ProductoDAO();
+		admin = new ProductoDAO();
 		try {
 			beanList = new ArrayList<ProductoBean>();
-			rs = admin1.report();
+			rs = admin.report();
 			int i = 0;
 			if (rs != null) {
 				while (rs.next()) {
 					i++;
 					bean = new ProductoBean();
-					bean.setIdProducto(rs.getInt("idProducto"));
-					bean.setDescripcion(rs.getString("descripcion"));
-					bean.setIdMarca(rs.getInt("idMarca"));;
-					bean.setPrecioCompra(rs.getDouble("precio_compra"));;
-					bean.setIdCategoria(rs.getInt("idCategoria"));;
-					bean.setIdProveedor(rs.getInt("idProveedor"));;
-					bean.setIdUniMedida(rs.getInt("idUniMedida"));
-					bean.setStockActual(rs.getInt("stock_actual"));
-					bean.setStockMinimo(rs.getInt("stock_minimo"));
+					bean.setIdProducto(rs.getInt(1));
+					bean.setDescripcion(rs.getString(2));
+					bean.setIdMarca(rs.getInt(3));
+					bean.setPrecioCompra(rs.getDouble(4));
+					bean.setIdCategoria(rs.getInt(5));
+					bean.setIdProveedor(rs.getInt(6));
+					bean.setIdUniMedida(rs.getInt(7));
+					bean.setStockActual(rs.getInt(8));
+					bean.setStockMinimo(rs.getInt(9));
 					beanList.add(bean);
 				}
 			}
@@ -81,10 +78,10 @@ public class ProductoAction extends ActionSupport{
 	
 	public String ActualizarProducto() throws Exception {
 		
-		admin2 = new ProductoDAO();
+		admin = new ProductoDAO();
 		try {
 			if (submitType.equals("updatedata")) {
-				rs = admin2.detalleProducto(idProducto.trim());
+				rs = admin.detalleProducto(idProducto.trim());
 				if (rs != null) {
 					while (rs.next()) {
 						descripcion = rs.getString("descripcion");
@@ -99,7 +96,8 @@ public class ProductoAction extends ActionSupport{
 					}
 				}
 			} else {
-				int i = admin2.updateProducto(descripcion, idMarca, precio_compra, idProveedor, idProducto);
+				int i = admin.updateProducto(descripcion, idMarca, precio_compra, idCategoria, idProveedor, 
+											 idUnidad, stock_actual, stock_minimo, idProducto);
 				if (i > 0) {
 					msg = "Record Updated Successfuly";
 				} else {
@@ -115,9 +113,9 @@ public class ProductoAction extends ActionSupport{
 	}
 	
 	public String EliminarProducto() throws Exception {
-		admin3 = new ProductoDAO();
+		admin = new ProductoDAO();
 		try {
-			int isDeleted = admin3.deleteProducto(idProducto);
+			int isDeleted = admin.deleteProducto(idProducto);
 			if (isDeleted > 0) {
 				msg = "Record deleted successfully";
 			} else {
