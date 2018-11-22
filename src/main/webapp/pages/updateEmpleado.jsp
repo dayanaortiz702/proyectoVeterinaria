@@ -42,33 +42,34 @@
              
               <div>
                 <form action="updateEmpleadoList" method="post"  class="form-horizontal mt-5" >
-                  <input type="hidden"  name="idEmpleado" value='<s:property value="idEmpleado"/>'>
+                  <input type="text"  name="registro.idEmpleado" value='<s:property value="registro.idEmpleado"/>'>
                   
                   <div class="form-group row">
                     <label class="col-sm-2 control-label">Nombres</label>
                     <div class="col-sm-10">
-                      <input type="text" class="form-control" name="nombres" value='<s:property value="nombres"/>'>
+                      <input type="text" class="form-control" name="registro.nombres" value='<s:property value="registro.nombres"/>'>
                     </div>
                   </div>
                   
                   <div class="form-group row">
                     <label class="col-sm-2 control-label">Apellidos</label>
                     <div class="col-sm-10">
-                      <input type="text" class="form-control" name="apellidos" value='<s:property value="apellidos"/>'>
+                      <input type="text" class="form-control" name="registro.apellidos" value='<s:property value="registro.apellidos"/>'>
                     </div>
                   </div>
                   
                     <div class="form-group row">
                     <label class="col-sm-2 control-label">Tipo de Documento</label>
                     <div class="col-sm-10">
-						
+						<s:select name="registro.idTipoDocumento" list="cbDocumento" listKey="idTipoDocumento" listValue="descripcion" value="registro.idTipoDocumento" />
+                      	
                     </div>
                   </div>
                   
                   <div class="form-group row">
                     <label class="col-sm-2 control-label">Nro de documento</label>
                     <div class="col-sm-10">
-                      <input type="text" class="form-control" name="documento" value='<s:property value="documento"/>'>
+                      <input type="text" class="form-control" name="registro.nroDocumento" value='<s:property value="registro.nroDocumento"/>'>
                     </div>
                   </div>
                   
@@ -77,35 +78,35 @@
                   <div class="form-group row">
                     <label class="col-sm-2 control-label">Teléfono</label>
                     <div class="col-sm-10">
-                      <input type="text" class="form-control" name="telefono" value='<s:property value="telefono"/>'> 
+                      <input type="text" class="form-control" name="registro.telefono" value='<s:property value="registro.telefono"/>'> 
                     </div>
                   </div>
                   
                   <div class="form-group row">
                     <label class="col-sm-2 control-label">Correo</label>
                     <div class="col-sm-10">
-                      <input type="text" class="form-control" name="correo" value='<s:property value="correo"/>'>
+                      <input type="text" class="form-control" name="registro.correo" value='<s:property value="registro.correo"/>'>
                     </div>
                   </div>
                   
                   <div class="form-group row">
                     <label class="col-sm-2 control-label">Dirección</label>
                     <div class="col-sm-10">
-                      <input type="text" class="form-control" name="direccion" value='<s:property value="direccion"/>'>
+                      <input type="text" class="form-control" name="registro.direccion" value='<s:property value="registro.direccion"/>'>
                     </div>
                   </div>                  
                          
                   <div class="form-group row">
                        <label class="control-label col-sm-2">Fecha de nacimiento</label>
                        <div class="col-sm-10">
-                         <input id="dp2" type="text" size="16" class="form-control" name="fecha_nac" value='<s:property value="fecha_nac"/>'>
+                         <input id="dp2" type="text" size="16" class="form-control" name="registro.fecha_nac" value='<s:property value="registro.fecha_nac"/>'>
                        </div>
                   </div>
                   
                   <div class="form-group row">
                        <label class="control-label col-sm-2">Fecha de ingreso</label>
                        <div class="col-sm-10">
-                         <input id="dp6" type="text" size="16" class="form-control" name="fecha_ingreso" value='<s:property value="fecha_ingreso"/>'>
+                         <input id="dp6" type="text" size="16" class="form-control" name="registro.fecha_ingreso" value='<s:property value="registro.fecha_ingreso"/>'>
                        </div>
                   </div>       
                             
@@ -113,29 +114,21 @@
                   <div class="form-group row">
                     <label class="col-sm-2 control-label">Cargo</label>
                     <div class="col-sm-10">
-                      <input type="text" class="form-control" name="idcargo" value='<s:property value="idcargo "/>'>
+                      <input type="text" class="form-control" name="registro.idCargo" value='<s:property value="registro.idCargo "/>'>
                     </div>
                   </div>
                   
                   <div class="form-group row">
                     <label class="col-sm-2 control-label">Usuario</label>
                     <div class="col-sm-10">
-                      <input type="text" class="form-control" name="idusuario" value='<s:property value="idusuario"/>'>
+                      <input type="text" class="form-control" name="registro.idUsuario" value='<s:property value="registro.idUsuario"/>'>
                     </div>
                   </div>
                   
                   
                   <div class="form-group row">
                       <div class="col-lg-offset-2 col-lg-10">
-                        <button name="submitType" class="btn btn-success" type="submit">Modificar</button>    
-                       	<s:if test="ctr>0">
-							<span style="color: red;"><s:property value="msg" /></span>
-							
-						</s:if>
-						<s:else>
-							<span style="color: green;"><s:property value="msg" /></span>
-							
-						</s:else>                 
+                        <button name="submitType" class="btn btn-success" type="submit">Modificar</button>                           	              
                       </div>                      	
                   </div>                  
                 </form>               

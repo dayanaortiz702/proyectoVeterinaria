@@ -1,12 +1,8 @@
 <%@taglib prefix="s" uri="/struts-tags"%>
-<%@ taglib uri="/struts-jquery-tags" prefix="sj"%>
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-	pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
-  <sj:head  jqueryui="true" jquerytheme="blitzer" />
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="shortcut icon" href="img/favicon.png">
@@ -49,63 +45,63 @@
                   <div class="form-group row">
                     <label class="col-sm-2 control-label">Nombres</label>
                     <div class="col-sm-10">
-                      <input type="text" class="form-control" name="nombres">
+                      <input type="text" class="form-control" name="registro.nombres">
                     </div>
                   </div>
                   
                   <div class="form-group row">
                     <label class="col-sm-2 control-label">Apellidos</label>
                     <div class="col-sm-10">
-                      <input type="text" class="form-control" name="apellidos">
+                      <input type="text" class="form-control" name="registro.apellidos">
                     </div>
                   </div>
                   
                   <div class="form-group row">
                     <label class="col-sm-2 control-label">Tipo de Documento</label>
                     <div class="col-sm-10">
-                    	
+                    	<s:select name="registro.idTipoDocumento" list="cbDocumento" listKey="idTipoDocumento" listValue="descripcion"  />
                     </div>
                   </div>
            
                   <div class="form-group row">
                     <label class="col-sm-2 control-label">Nro de Documento</label>
                     <div class="col-sm-10">
-                      <input type="text" class="form-control" name="documento">
+                      <input type="text" class="form-control" name="registro.nroDocumento">
                     </div>
                   </div>
                   
                   <div class="form-group row">
                     <label class="col-sm-2 control-label">Teléfono</label>
                     <div class="col-sm-10">
-                      <input type="text" class="form-control" name="telefono">
+                      <input type="text" class="form-control" name="registro.telefono">
                     </div>
                   </div>
                   
                   <div class="form-group row">
                     <label class="col-sm-2 control-label">Correo</label>
                     <div class="col-sm-10">
-                      <input type="text" class="form-control" name="correo">
+                      <input type="text" class="form-control" name="registro.correo">
                     </div>
                   </div>
                   
                   <div class="form-group row">
                     <label class="col-sm-2 control-label">Dirección</label>
                     <div class="col-sm-10">
-                      <input type="text" class="form-control" name="direccion">
+                      <input type="text" class="form-control" name="registro.direccion">
                     </div>
                   </div>                  
                          
                   <div class="form-group row">
                        <label class="control-label col-sm-2">Fecha de nacimiento</label>
                        <div class="col-sm-10">
-                         <input id="dp2" type="text" value="" size="16" class="form-control" name="fecha_nac">
+                         <input id="dp2" type="text" value="" size="16" class="form-control" name="registro.fecha_nac">
                        </div>
                   </div>
                   
                   <div class="form-group row">
                        <label class="control-label col-sm-2">Fecha de ingreso</label>
                        <div class="col-sm-10">
-                         <input id="dp6" type="text" value="" size="16" class="form-control" name="fecha_ingreso">
+                         <input id="dp6" type="text" value="" size="16" class="form-control" name="registro.fecha_ingreso">
                        </div>
                   </div>       
                             
@@ -113,26 +109,21 @@
                   <div class="form-group row">
                     <label class="col-sm-2 control-label">Cargo</label>
                     <div class="col-sm-10">
-                      <input type="text" class="form-control" name="idcargo">
+                      <input type="text" class="form-control" name="registro.idCargo">
                     </div>
                   </div>
                   
                   <div class="form-group row">
                     <label class="col-sm-2 control-label">Usuario</label>
                     <div class="col-sm-10">
-                      <input type="text" class="form-control" name="idusuario">
+                      <input type="text" class="form-control" name="registro.idUsuario">
                     </div>
                   </div>
                   
                   <div class="form-group row">
                       <div class="col-lg-offset-2 col-lg-10">
                         <button class="btn btn-success" type="submit">Registrar</button>
-                        <s:if test="ctr>0">
-							<span style="color: green;"><s:property value="msg" /></span>
-						</s:if>
-						<s:else>
-							<span style="color: red;"><s:property value="msg" /></span>
-						</s:else>
+                        
                       </div>
                       	
                   </div>
@@ -157,8 +148,8 @@
     <!--main content end-->
 	</div>
 	
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
-	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
 		
 	<!-- jquery ui -->
 	  <script src="../js/jquery-ui-1.9.2.custom.min.js"></script>

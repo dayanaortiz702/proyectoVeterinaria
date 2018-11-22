@@ -1,20 +1,48 @@
 package pe.edu.cibertec.bean;
 
-public class EmpleadoBean {
-	private int idEmpleado;
+import java.io.Serializable;
+
+public class EmpleadoBean implements Serializable{
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+	
+	private Integer idEmpleado;
 	private String nombres;
 	private String apellidos;
-	private String idTipoDocumento;
+	private Integer idTipoDocumento;
 	private String nroDocumento;
 	private String telefono;
     private String correo;
     private String direccion;
     private String fecha_nac;
     private String fecha_ingreso;
-    private int idCargo;
-    private int idUsuario;
+    private Integer idCargo;
+    private Integer idUsuario;    
     
-
+    private TipoDocumentoBean tipoDocumento;
+    private CargoBean cargo;
+    private UsuarioBean usuario;
+       
+	public CargoBean getCargo() {
+		return cargo;
+	}
+	public void setCargo(CargoBean cargo) {
+		this.cargo = cargo;
+	}
+	public UsuarioBean getUsuario() {
+		return usuario;
+	}
+	public void setUsuario(UsuarioBean usuario) {
+		this.usuario = usuario;
+	}
+	public TipoDocumentoBean getTipoDocumento() {
+		return tipoDocumento;
+	}
+	public void setTipoDocumento(TipoDocumentoBean tipoDocumento) {
+		this.tipoDocumento = tipoDocumento;
+	}
 	public String getNombres() {
 		return nombres;
 	}
@@ -40,30 +68,14 @@ public class EmpleadoBean {
 	public void setCorreo(String correo) {
 		this.correo = correo;
 	}
-	public int getIdEmpleado() {
-		return idEmpleado;
-	}
-	public void setIdEmpleado(int idEmpleado) {
-		this.idEmpleado = idEmpleado;
-	}
+	
 	public String getNroDocumento() {
 		return nroDocumento;
 	}
 	public void setNroDocumento(String nroDocumento) {
 		this.nroDocumento = nroDocumento;
 	}
-	public int getIdCargo() {
-		return idCargo;
-	}
-	public void setIdCargo(int idCargo) {
-		this.idCargo = idCargo;
-	}
-	public String getIdTipoDocumento() {
-		return idTipoDocumento;
-	}
-	public void setIdTipoDocumento(String idTipoDocumento) {
-		this.idTipoDocumento = idTipoDocumento;
-	}
+	
 	public String getDireccion() {
 		return direccion;
 	}
@@ -82,13 +94,30 @@ public class EmpleadoBean {
 	public void setFecha_ingreso(String fecha_ingreso) {
 		this.fecha_ingreso = fecha_ingreso;
 	}
-	public int getIdUsuario() {
+	public Integer getIdEmpleado() {
+		return idEmpleado;
+	}
+	public void setIdEmpleado(Integer idEmpleado) {
+		this.idEmpleado = idEmpleado;
+	}
+	public Integer getIdTipoDocumento() {
+		return idTipoDocumento;
+	}
+	public void setIdTipoDocumento(Integer idTipoDocumento) {
+		this.idTipoDocumento = idTipoDocumento;
+	}
+	public Integer getIdCargo() {
+		return idCargo;
+	}
+	public void setIdCargo(Integer idCargo) {
+		this.idCargo = idCargo;
+	}
+	public Integer getIdUsuario() {
 		return idUsuario;
 	}
-	public void setIdUsuario(int idUsuario) {
+	public void setIdUsuario(Integer idUsuario) {
 		this.idUsuario = idUsuario;
 	}
-
 	
     
 }

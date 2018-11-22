@@ -1,6 +1,5 @@
 package pe.edu.cibertec.dao;
 
-import java.sql.CallableStatement;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -9,16 +8,17 @@ import java.util.ArrayList;
 import java.util.List;
 
 import pe.edu.cibertec.bean.ProductoBean;
+import pe.edu.cibertec.factory.conectaDB;
 
 public class ProductoDAO {
-	MySqlConexion con = new MySqlConexion();
+	conectaDB con = new conectaDB();
 	
 	public int registerProducto(String descripcion, String idMarca, String preciocompra, String idCategoria, 
 			String idProveedor, String idUnidad, String stockActual, String stockMinimo) throws Exception {
 		int i = 0;
 		try {
 			String sql = "INSERT INTO tb_producto VALUES (null,?,?,?,?,?,?,?,?)";
-			PreparedStatement ps = con.getConnection().prepareStatement(sql);
+			PreparedStatement ps = con.getConexion().prepareStatement(sql);
 			ps.setString(1, descripcion);
 			ps.setString(2, idMarca);
 			ps.setString(3, preciocompra);
@@ -34,8 +34,8 @@ public class ProductoDAO {
 			e.printStackTrace();
 			return i;
 		} finally {
-			if (con.getConnection() != null) {
-			con.getConnection().close();
+			if (con.getConexion() != null) {
+			con.getConexion().close();
 			}
 		}
 	}
@@ -45,15 +45,15 @@ public class ProductoDAO {
 		ResultSet rs = null;
 			try {
 				String sql = "SELECT * from tb_producto";
-				PreparedStatement ps = con.getConnection().prepareStatement(sql);
+				PreparedStatement ps = con.getConexion().prepareStatement(sql);
 				rs = ps.executeQuery();
 				return rs;
 			} catch (Exception e) {
 				e.printStackTrace();
 				return null;
 			} finally {
-				if (con.getConnection() != null) {
-				con.getConnection().close();
+				if (con.getConexion() != null) {
+				con.getConexion().close();
 				}
 			}
 		}
@@ -63,9 +63,9 @@ public class ProductoDAO {
 			
 			
 			try {
-				Connection cn = con.getConnection();
+				Connection cn = con.getConexion();
 				String sql = "SELECT * from tb_producto";
-				PreparedStatement ps = con.getConnection().prepareStatement(sql);
+				PreparedStatement ps = con.getConexion().prepareStatement(sql);
 				ResultSet rs = ps.executeQuery();
 				
 				while(rs.next()) {
@@ -96,7 +96,7 @@ public class ProductoDAO {
 		ResultSet rs = null;
 			try {
 				String sql = "SELECT * from tb_producto WHERE idProducto=?";
-				PreparedStatement ps = con.getConnection().prepareStatement(sql);
+				PreparedStatement ps = con.getConexion().prepareStatement(sql);
 				ps.setString(1, idproducto);
 				rs = ps.executeQuery();
 				return rs;
@@ -104,8 +104,8 @@ public class ProductoDAO {
 				e.printStackTrace();
 				return null;
 			} finally {
-				if (con.getConnection() != null) {
-					con.getConnection().close();
+				if (con.getConexion() != null) {
+					con.getConexion().close();
 				}
 			}
 		}
@@ -116,14 +116,14 @@ public class ProductoDAO {
 								  String stock_a, String stock_m, String idproducto)
 								  throws SQLException, Exception {
 		
-			con.getConnection().setAutoCommit(false);
+			con.getConexion().setAutoCommit(false);
 			int i = 0;
 			try {
 				String sql = "UPDATE tb_producto SET descripcion=?, idMarca=?, precio_compra=?, "
 												  + "idCategoria=?, idProveedor=?, idUniMedida=?,"
 												  + "stock_actual=?, stock_minimo=? WHERE idProducto=?";
 				
-				PreparedStatement ps = con.getConnection().prepareStatement(sql);
+				PreparedStatement ps = con.getConexion().prepareStatement(sql);
 								
 				ps.setString(1, descripcion);
 				ps.setString(2, idMarca);
@@ -139,32 +139,32 @@ public class ProductoDAO {
 				return i;
 			} catch (Exception e) {
 				e.printStackTrace();
-				con.getConnection().rollback();
+				con.getConexion().rollback();
 				return 0;
 			} finally {
-				if (con.getConnection() != null) {
-					con.getConnection().close();
+				if (con.getConexion() != null) {
+					con.getConexion().close();
 				}
 			}
 		}
 		
 		// DELETE
 		public int deleteProducto(String idproducto) throws SQLException, Exception {
-			con.getConnection().setAutoCommit(false);
+			con.getConexion().setAutoCommit(false);
 			int i = 0;
 			try {
 				String sql = "DELETE FROM tb_producto WHERE idProducto=?";
-				PreparedStatement ps = con.getConnection().prepareStatement(sql);
+				PreparedStatement ps = con.getConexion().prepareStatement(sql);
 				ps.setString(1, idproducto);
 				i = ps.executeUpdate();
 				return i;
 			} catch (Exception e) {
 				e.printStackTrace();
-				con.getConnection().rollback();
+				con.getConexion().rollback();
 				return 0;
 			} finally {
-				if (con.getConnection() != null) {
-					con.getConnection().close();
+				if (con.getConexion() != null) {
+					con.getConexion().close();
 				}
 			}
 		}

@@ -10,11 +10,51 @@ public class UsuarioBean implements Serializable{
 	private static final long serialVersionUID = 6449746185440521665L;
 	
 	private Integer idUsuario;
-	//private String idEmpleado;
 	private String usuario;
 	private String clave;
 	private Integer idEstado;
 	private Integer idPerfil;
+	
+	private EstadoBean estado;
+	
+	
+	
+	public EstadoBean getEstado() {
+		return estado;
+	}
+	public void setEstado(EstadoBean estado) {
+		this.estado = estado;
+	}
+	public Integer getIdUsuario() {
+		return idUsuario;
+	}
+	public void setIdUsuario(Integer idUsuario) {
+		this.idUsuario = idUsuario;
+	}
+	public String getUsuario() {
+		return usuario;
+	}
+	public void setUsuario(String usuario) {
+		this.usuario = usuario;
+	}
+	public String getClave() {
+		return clave;
+	}
+	public void setClave(String clave) {
+		this.clave = clave;
+	}
+	public Integer getIdEstado() {
+		return idEstado;
+	}
+	public void setIdEstado(Integer idEstado) {
+		this.idEstado = idEstado;
+	}
+	public Integer getIdPerfil() {
+		return idPerfil;
+	}
+	public void setIdPerfil(Integer idPerfil) {
+		this.idPerfil = idPerfil;
+	}
 	
 	
 	

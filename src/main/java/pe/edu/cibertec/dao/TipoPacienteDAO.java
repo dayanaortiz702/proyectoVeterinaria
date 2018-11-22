@@ -4,6 +4,8 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 
+import pe.edu.cibertec.factory.conectaDB;
+
 public class TipoPacienteDAO {
 
 	public ResultSet listarTipoPaciente() {
@@ -13,7 +15,7 @@ public class TipoPacienteDAO {
 		ResultSet rs=null;
 	
 			try {
-				cn=MySqlConexion.getConnection();
+				cn= new conectaDB().getConexion();
 				String sql="select idTipo, tipo from tb_tipo_paciente";
 				pstm=cn.prepareStatement(sql);
 				rs=pstm.executeQuery();

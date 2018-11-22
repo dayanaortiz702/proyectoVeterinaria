@@ -4,9 +4,11 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
+import pe.edu.cibertec.factory.conectaDB;
+
 public class PacienteDAO {
 	
-	MySqlConexion con = new  MySqlConexion();
+	conectaDB con = new  conectaDB();
 	
 	public int registerPaciente(String nombre, String fecha_nacimiento, String fecha_ingreso, String sexo, String color,
 			String particularidad, String peso, String frecuencia_cardiaca, String frecuencia_respiratoria,
@@ -17,7 +19,7 @@ public class PacienteDAO {
 		try {
 			String sql = "INSERT INTO tb_paciente VALUES (null,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";				
 
-			PreparedStatement ps = con.getConnection().prepareStatement(sql);
+			PreparedStatement ps = con.getConexion().prepareStatement(sql);
 			
 			ps.setString(1, nombre);
 			ps.setString(2, fecha_nacimiento);
@@ -40,8 +42,8 @@ public class PacienteDAO {
 			e.printStackTrace();
 			return i;
 		} finally {
-			if (con.getConnection() != null) {
-				con.getConnection().close();
+			if (con.getConexion() != null) {
+				con.getConexion().close();
 			}
 		}
 	}
@@ -50,15 +52,15 @@ public class PacienteDAO {
 		ResultSet rs = null;
 		try {
 			String sql = "SELECT * from tb_paciente";
-			PreparedStatement ps = con.getConnection().prepareStatement(sql);
+			PreparedStatement ps = con.getConexion().prepareStatement(sql);
 			rs = ps.executeQuery();
 			return rs;
 		} catch (Exception e) {
 			e.printStackTrace();
 			return null;
 		} finally {
-			if (con.getConnection() != null) {
-				con.getConnection().close();
+			if (con.getConexion() != null) {
+				con.getConexion().close();
 			}
 		}
 	}
@@ -66,7 +68,7 @@ public class PacienteDAO {
 		ResultSet rs = null;
 		try {
 			String sql = "SELECT * from tb_paciente WHERE idPaciente=?";
-			PreparedStatement ps = con.getConnection().prepareStatement(sql);
+			PreparedStatement ps = con.getConexion().prepareStatement(sql);
 			ps.setString(1, idPaciente);
 			rs = ps.executeQuery();
 			return rs;
@@ -74,14 +76,14 @@ public class PacienteDAO {
 			e.printStackTrace();
 			return null;
 		} finally {
-			if (con.getConnection() != null) {
-				con.getConnection().close();
+			if (con.getConexion() != null) {
+				con.getConexion().close();
 			}
 		}
 	}
 	public int updatePaciente(String color,String particularidad, String peso,String turgencia_piel, String estado_reproductivo,String idPaciente) throws SQLException, Exception {
 
-		con.getConnection().setAutoCommit(false);
+		con.getConexion().setAutoCommit(false);
 		int i = 0;
 		try {
 			String sql = "UPDATE tb_paciente SET   "
@@ -90,7 +92,7 @@ public class PacienteDAO {
 					+ "WHERE idPaciente=?";
 		
 
-			PreparedStatement ps = con.getConnection().prepareStatement(sql);
+			PreparedStatement ps = con.getConexion().prepareStatement(sql);
 
 			ps.setString(1, color);
 			ps.setString(2, particularidad);
@@ -103,32 +105,32 @@ public class PacienteDAO {
 			return i;
 		} catch (Exception e) {
 			e.printStackTrace();
-			con.getConnection().rollback();
+			con.getConexion().rollback();
 			return 0;
 		} finally {
-			if (con.getConnection() != null) {
-				con.getConnection().close();
+			if (con.getConexion() != null) {
+				con.getConexion().close();
 			}
 		}
 	}
 
 	// method for delete the record
 	public int deletePaciente(String idPaciente) throws SQLException, Exception {
-		con.getConnection().setAutoCommit(false);
+		con.getConexion().setAutoCommit(false);
 		int i = 0;
 		try {
 			String sql = "DELETE FROM tb_paciente WHERE idPaciente=?";
-			PreparedStatement ps = con.getConnection().prepareStatement(sql);
+			PreparedStatement ps = con.getConexion().prepareStatement(sql);
 			ps.setString(1, idPaciente);
 			i = ps.executeUpdate();
 			return i;
 		} catch (Exception e) {
 			e.printStackTrace();
-			con.getConnection().rollback();
+			con.getConexion().rollback();
 			return 0;
 		} finally {
-			if (con.getConnection() != null) {
-				con.getConnection().close();
+			if (con.getConexion() != null) {
+				con.getConexion().close();
 			}
 		}
 	}

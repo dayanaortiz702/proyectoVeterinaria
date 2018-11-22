@@ -6,9 +6,7 @@ import java.util.List;
 
 import com.opensymphony.xwork2.ActionSupport;
 
-import pe.edu.cibertec.bean.PacienteBean;
 import pe.edu.cibertec.bean.ProductoBean;
-import pe.edu.cibertec.dao.PacienteDAO;
 import pe.edu.cibertec.dao.ProductoDAO;
 
 public class ProductoAction extends ActionSupport{

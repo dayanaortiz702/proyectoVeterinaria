@@ -27,7 +27,6 @@
 			<input type="submit" value="Nuevo Empleado" class="btn btn-success"/>		
 		</form>		
 		
-		<s:if test="noData==true">
 			<table class="table mt-3" >
 				<thead class="thead-dark">
 					<tr>
@@ -47,36 +46,35 @@
 					</tr>
 				</thead>
 				<tbody>
-					<s:iterator value="beanList">
+					<s:iterator value="grdEmpleados" var="item" status="estado">
 						<tr>
-							<td><s:property value="idEmpleado" /></td>
-							<td><s:property value="nombres" /></td>
-							<td><s:property value="apellidos" /></td>
-							<td><s:property value="idTipoDocumento" /></td>
-							<td><s:property value="nroDocumento" /></td>
-							<td><s:property value="telefono" /></td>
-							<td><s:property value="correo" /></td>
-							<td><s:property value="direccion" /></td>
-							<td><s:property value="fecha_nac" /></td>
-							<td><s:property value="fecha_ingreso" /></td>
-							<td><s:property value="idCargo" /></td>
-							<td><s:property value="idUsuario" /></td>
+							<td scope="row"><s:property value="#item.idEmpleado" /></td>
+							<td><s:property value="#item.nombres" /></td>
+							<td><s:property value="#item.apellidos" /></td>
+							<td><s:property value="#item.tipoDocumento.descripcion" /></td>
+							<td><s:property value="#item.nroDocumento" /></td>
+							<td><s:property value="#item.telefono" /></td>
+							<td><s:property value="#item.correo" /></td>
+							<td><s:property value="#item.direccion" /></td>
+							<td><s:property value="#item.fecha_nac" /></td>
+							<td><s:property value="#item.fecha_ingreso" /></td>
+							<td><s:property value="#item.idCargo" /></td>
+							<td><s:property value="#item.idUsuario" /></td>
 							<td>
-								<a href="updateEmpleado.action?submitType=updatedata&idEmpleado=<s:property value="idEmpleado"/>">
-									<i class="fas fa-edit"></i>
-								</a>
-								<a href="deleteEmpleado.action?idEmpleado=<s:property value="idEmpleado"/>">
-									<i class="fas fa-trash-alt"></i>
-								</a>
+								<s:a action="updateEmpleado">
+						      		<s:param name="codigo" value="#item.idEmpleado"></s:param>
+						      		<i class="fas fa-edit"></i>
+						      	</s:a>
+						      	<s:a action="deleteEmpleado">
+						      		<s:param name="codigo" value="#item.idEmpleado"></s:param>
+						      		<i class="fas fa-trash-alt"></i>
+						      	</s:a>
 							</td>
-						</tr>
-					</s:iterator>
-				</tbody>
-			</table>
-		</s:if>
-		<s:else>
-			<div style="color: red;">No existen datos</div>
-		</s:else>
+					    </tr>	
+				  	</s:iterator>	       
+				  </tbody>
+				</table>
+			
       </section>
    	  </section>
     <!--main content end-->
