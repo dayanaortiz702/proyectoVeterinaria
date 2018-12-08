@@ -1,20 +1,22 @@
 package pe.edu.cibertec.action;
 
 import java.util.List;
-
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
-
 import com.opensymphony.xwork2.ActionSupport;
 
+import pe.edu.cibertec.bean.CargoBean;
 import pe.edu.cibertec.bean.EmpleadoBean;
 import pe.edu.cibertec.bean.TipoDocumentoBean;
-import pe.edu.cibertec.dao.Impl.EmpleadoDAOImpl;
-import pe.edu.cibertec.dao.Impl.TipoDocumentoDAOImpl;
+import pe.edu.cibertec.bean.UsuarioBean;
+import pe.edu.cibertec.service.CargoService;
 import pe.edu.cibertec.service.EmpleadoService;
 import pe.edu.cibertec.service.TipoDocumentoService;
+import pe.edu.cibertec.service.UsuarioService;
+import pe.edu.cibertec.service.Impl.CargoServiceImpl;
 import pe.edu.cibertec.service.Impl.EmpleadoServiceImpl;
 import pe.edu.cibertec.service.Impl.TipoDocumentoServiceImpl;
+import pe.edu.cibertec.service.Impl.UsuarioServiceImpl;
 
 public class EmpleadoAction extends ActionSupport{
 	
@@ -22,10 +24,16 @@ public class EmpleadoAction extends ActionSupport{
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-	private EmpleadoDAOImpl empleadoService = new EmpleadoDAOImpl();
-	private TipoDocumentoDAOImpl documentoService = new TipoDocumentoDAOImpl();
+	private EmpleadoService empleadoService = new EmpleadoServiceImpl();
+	private TipoDocumentoService documentoService = new TipoDocumentoServiceImpl();
+	private CargoService cargoService = new CargoServiceImpl();
+	private UsuarioService usuarioService = new UsuarioServiceImpl();
+	
 	private List<EmpleadoBean> grdEmpleados;
 	private List<TipoDocumentoBean> cbDocumento;
+	private List<CargoBean> cbCargo;
+	private List<UsuarioBean> cbUsuario;
+	
 	private int rows;
 	private EmpleadoBean registro = new EmpleadoBean();
 	private int codigo;
@@ -53,6 +61,8 @@ public class EmpleadoAction extends ActionSupport{
 		
 		try {
 			setCbDocumento(documentoService.listarTodos());
+			setCbCargo(cargoService.listarTodos());
+			setCbUsuario(usuarioService.listarTodos());
 			setRegistro(new EmpleadoBean());
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -89,6 +99,8 @@ public class EmpleadoAction extends ActionSupport{
 		
 		try {
 			setCbDocumento(documentoService.listarTodos());
+			setCbCargo(cargoService.listarTodos());
+			setCbUsuario(usuarioService.listarTodos());
 			setRegistro(empleadoService.consultarEmpleadoPK(codigo));
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -170,5 +182,54 @@ public class EmpleadoAction extends ActionSupport{
 		this.mensaje = mensaje;
 	}
 
+	public EmpleadoService getEmpleadoService() {
+		return empleadoService;
+	}
+
+	public void setEmpleadoService(EmpleadoService empleadoService) {
+		this.empleadoService = empleadoService;
+	}
+
+	public TipoDocumentoService getDocumentoService() {
+		return documentoService;
+	}
+
+	public void setDocumentoService(TipoDocumentoService documentoService) {
+		this.documentoService = documentoService;
+	}
+
+	public CargoService getCargoService() {
+		return cargoService;
+	}
+
+	public void setCargoService(CargoService cargoService) {
+		this.cargoService = cargoService;
+	}
+
+	public UsuarioService getUsuarioService() {
+		return usuarioService;
+	}
+
+	public void setUsuarioService(UsuarioService usuarioService) {
+		this.usuarioService = usuarioService;
+	}
+
+	public List<CargoBean> getCbCargo() {
+		return cbCargo;
+	}
+
+	public void setCbCargo(List<CargoBean> cbCargo) {
+		this.cbCargo = cbCargo;
+	}
+
+	public List<UsuarioBean> getCbUsuario() {
+		return cbUsuario;
+	}
+
+	public void setCbUsuario(List<UsuarioBean> cbUsuario) {
+		this.cbUsuario = cbUsuario;
+	}
+
+	
 	
 }

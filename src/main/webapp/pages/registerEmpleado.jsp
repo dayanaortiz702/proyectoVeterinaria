@@ -109,14 +109,14 @@
                   <div class="form-group row">
                     <label class="col-sm-2 control-label">Cargo</label>
                     <div class="col-sm-10">
-                      <input type="text" class="form-control" name="registro.idCargo">
+                      <s:select name="registro.idCargo" list="cbCargo" listKey="idCargo" listValue="nombre"  />
                     </div>
                   </div>
                   
                   <div class="form-group row">
                     <label class="col-sm-2 control-label">Usuario</label>
                     <div class="col-sm-10">
-                      <input type="text" class="form-control" name="registro.idUsuario">
+                      <s:select name="registro.idUsuario" list="cbUsuario" listKey="idUsuario" listValue="usuario"  />
                     </div>
                   </div>
                   

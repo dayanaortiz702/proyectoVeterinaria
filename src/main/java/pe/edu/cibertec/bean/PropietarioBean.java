@@ -16,8 +16,15 @@ public class PropietarioBean implements Serializable{
     private String correo;
 	private Integer idTipoDocumento;
 	private String nroDocumento;
+	private TipoDocumentoBean tipoDocumento;
+		
 	
-	
+	public TipoDocumentoBean getTipoDocumento() {
+		return tipoDocumento;
+	}
+	public void setTipoDocumento(TipoDocumentoBean tipoDocumento) {
+		this.tipoDocumento = tipoDocumento;
+	}
 	public String getNombres() {
 		return nombres;
 	}

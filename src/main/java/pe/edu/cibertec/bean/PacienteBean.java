@@ -15,9 +15,9 @@ public class PacienteBean implements Serializable{
 	private String sexo;
 	private String color;
 	private String particularidad;
-	private String peso;
-	private String frecuencia_cardiaca;
-	private String frecuencia_respiratoria;
+	private Double peso;
+	private Double frecuencia_cardiaca;
+	private Double frecuencia_respiratoria;
 	private String color_mucosa;
 	private String turgencia_piel;
 	private String estado_reproductivo;
@@ -68,22 +68,23 @@ public class PacienteBean implements Serializable{
 	public void setParticularidad(String particularidad) {
 		this.particularidad = particularidad;
 	}
-	public String getPeso() {
+	
+	public Double getPeso() {
 		return peso;
 	}
-	public void setPeso(String peso) {
+	public void setPeso(Double peso) {
 		this.peso = peso;
 	}
-	public String getFrecuencia_cardiaca() {
+	public Double getFrecuencia_cardiaca() {
 		return frecuencia_cardiaca;
 	}
-	public void setFrecuencia_cardiaca(String frecuencia_cardiaca) {
+	public void setFrecuencia_cardiaca(Double frecuencia_cardiaca) {
 		this.frecuencia_cardiaca = frecuencia_cardiaca;
 	}
-	public String getFrecuencia_respiratoria() {
+	public Double getFrecuencia_respiratoria() {
 		return frecuencia_respiratoria;
 	}
-	public void setFrecuencia_respiratoria(String frecuencia_respiratoria) {
+	public void setFrecuencia_respiratoria(Double frecuencia_respiratoria) {
 		this.frecuencia_respiratoria = frecuencia_respiratoria;
 	}
 	public String getColor_mucosa() {

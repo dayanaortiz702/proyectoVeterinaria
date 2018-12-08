@@ -16,9 +16,14 @@ public class UsuarioBean implements Serializable{
 	private Integer idPerfil;
 	
 	private EstadoBean estado;
+	private PerfilBean perfil;
 	
-	
-	
+	public PerfilBean getPerfil() {
+		return perfil;
+	}
+	public void setPerfil(PerfilBean perfil) {
+		this.perfil = perfil;
+	}
 	public EstadoBean getEstado() {
 		return estado;
 	}

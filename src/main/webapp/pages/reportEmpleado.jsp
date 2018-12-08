@@ -58,8 +58,8 @@
 							<td><s:property value="#item.direccion" /></td>
 							<td><s:property value="#item.fecha_nac" /></td>
 							<td><s:property value="#item.fecha_ingreso" /></td>
-							<td><s:property value="#item.idCargo" /></td>
-							<td><s:property value="#item.idUsuario" /></td>
+							<td><s:property value="#item.cargo.nombre" /></td>
+							<td><s:property value="#item.usuario.usuario" /></td>
 							<td>
 								<s:a action="updateEmpleado">
 						      		<s:param name="codigo" value="#item.idEmpleado"></s:param>

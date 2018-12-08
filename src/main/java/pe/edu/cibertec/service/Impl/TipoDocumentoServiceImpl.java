@@ -21,4 +21,19 @@ public class TipoDocumentoServiceImpl implements TipoDocumentoService{
 		return dao.consultarDocumentoPK(codigo);
 	}
 
+	@Override
+	public int insertar(TipoDocumentoBean bean) throws Exception {
+		return dao.insertar(bean);
+	}
+
+	@Override
+	public int eliminar(int id) throws Exception {
+		return dao.eliminar(id);
+	}
+
+	@Override
+	public int actualizar(TipoDocumentoBean bean) throws Exception {
+		return dao.actualizar(bean);
+	}
+
 }

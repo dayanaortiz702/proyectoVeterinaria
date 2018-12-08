@@ -7,14 +7,18 @@ import java.util.ArrayList;
 import java.util.List;
 
 import pe.edu.cibertec.bean.EmpleadoBean;
+import pe.edu.cibertec.dao.ICargoDAO;
 import pe.edu.cibertec.dao.IEmpleadoDAO;
 import pe.edu.cibertec.dao.ITipoDocumentoDAO;
+import pe.edu.cibertec.dao.IUsuarioDAO;
 import pe.edu.cibertec.factory.DAOFactory;
 import pe.edu.cibertec.factory.conectaDB;
 
 public class EmpleadoDAOImpl implements IEmpleadoDAO{
 	DAOFactory factoria = DAOFactory.getFactory(DAOFactory.MYSQL);
 	ITipoDocumentoDAO dao = factoria.getDocumento();		
+	ICargoDAO daoCargo = factoria.getCargo();
+	IUsuarioDAO daoUsuario = factoria.getUsuario();	
 	conectaDB conexion = new conectaDB(); 
 	
 	@Override
@@ -160,7 +164,9 @@ public class EmpleadoDAOImpl implements IEmpleadoDAO{
 				bean.setFecha_nac(rs.getString("fecha_nac"));
 				bean.setFecha_ingreso(rs.getString("fecha_ingreso"));
 				bean.setIdCargo(rs.getInt("idCargo"));
+				bean.setCargo(daoCargo.consultarCargoPK(rs.getInt("idCargo")));
 				bean.setIdUsuario(rs.getInt("idUsuario"));
+				bean.setUsuario(daoUsuario.consultarUsuarioPK(rs.getInt("idUsuario")));
 				
 				lista.add(bean);
 			}

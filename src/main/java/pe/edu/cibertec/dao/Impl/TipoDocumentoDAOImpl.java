@@ -80,4 +80,96 @@ public class TipoDocumentoDAOImpl implements ITipoDocumentoDAO{
 		return bean;
 	}
 
+	@Override
+	public int insertar(TipoDocumentoBean bean) throws Exception {
+		Connection con = null;
+		PreparedStatement pstm = null;
+		
+		int insertados = -1;
+		try {
+			String sql = "INSERT INTO tb_tipo_documento VALUES (null,?)";
+			con = new conectaDB().getConexion();
+			
+			int i = 1;			
+			pstm = con.prepareStatement(sql);
+			pstm.setString(i++, bean.getDescripcion());
+			
+			insertados = pstm.executeUpdate();
+		
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			try {
+				if(pstm != null) pstm.close();
+			} catch (Exception e2) {}
+			try {
+				if(con != null) con.close();
+			} catch (Exception e2) {
+				
+			}
+		}
+		return insertados;
+	}
+
+	@Override
+	public int eliminar(int id) throws Exception {
+		Connection con = null;
+		PreparedStatement pstm = null;
+		
+		int insertados = -1;
+		try {
+			String sql = "delete from tb_tipo_documento where idTipoDocumento = ?";
+			con = new conectaDB().getConexion();
+			
+			int i = 1;			
+			pstm = con.prepareStatement(sql);
+			pstm.setInt(i++, id);		
+			insertados = pstm.executeUpdate();
+		
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			try {
+				if(pstm != null) pstm.close();
+			} catch (Exception e2) {}
+			try {
+				if(con != null) con.close();
+			} catch (Exception e2) {
+				
+			}
+		}
+		return insertados;
+	}
+
+	@Override
+	public int actualizar(TipoDocumentoBean bean) throws Exception {
+		Connection con = null;
+		PreparedStatement pstm = null;
+		
+		int insertados = -1;
+		try {
+			String sql = "update tb_tipo_documento set descripcion = ? where idTipoDocumento = ?";
+			con = new conectaDB().getConexion();
+			
+			int i = 1;			
+			pstm = con.prepareStatement(sql);
+			pstm.setString(i++, bean.getDescripcion());
+			pstm.setInt(i++, bean.getIdTipoDocumento());
+			insertados = pstm.executeUpdate();
+		
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			try {
+				if(pstm != null) pstm.close();
+			} catch (Exception e2) {}
+			try {
+				if(con != null) con.close();
+			} catch (Exception e2) {
+				
+			}
+		}
+		return insertados;
+	}
+
 }

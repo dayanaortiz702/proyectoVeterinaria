@@ -19,6 +19,35 @@ public class ProductoBean implements Serializable{
 	private Integer stockActual;
 	private Integer stockMinimo;
 	
+	private MarcaBean marca;
+	private CategoriaBean categoria;
+	private ProveedorBean proveedor;
+	private UnidadMedidaBean unidad;
+	
+	public MarcaBean getMarca() {
+		return marca;
+	}
+	public void setMarca(MarcaBean marca) {
+		this.marca = marca;
+	}
+	public CategoriaBean getCategoria() {
+		return categoria;
+	}
+	public void setCategoria(CategoriaBean categoria) {
+		this.categoria = categoria;
+	}
+	public ProveedorBean getProveedor() {
+		return proveedor;
+	}
+	public void setProveedor(ProveedorBean proveedor) {
+		this.proveedor = proveedor;
+	}
+	public UnidadMedidaBean getUnidad() {
+		return unidad;
+	}
+	public void setUnidad(UnidadMedidaBean unidad) {
+		this.unidad = unidad;
+	}
 	public Integer getIdProducto() {
 		return idProducto;
 	}

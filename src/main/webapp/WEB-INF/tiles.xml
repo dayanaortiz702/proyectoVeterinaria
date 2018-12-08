@@ -31,61 +31,6 @@
         <put-attribute name="body" value="/pages/updateEmpleado.jsp"/>
     </definition>
     
-    
-    
-    <definition name="t_registraPaciente" extends="baseLayout">
-        <put-attribute name="body" value="/pages/registerPaciente.jsp"/>
-    </definition>
-
-	<definition name="t_reportPaciente" extends="baseLayout">
-        <put-attribute name="body" value="/pages/reportPaciente.jsp"/>
-    </definition>
-    
-    <definition name="t_actualizaPaciente" extends="baseLayout">
-        <put-attribute name="body" value="/pages/updatePaciente.jsp"/>
-    </definition>
-    
-    
-    
-    <definition name="t_registraPropietario" extends="baseLayout">
-        <put-attribute name="body" value="/pages/registerPropietario.jsp"/>
-    </definition>
-
-	<definition name="t_reportPropietario" extends="baseLayout">
-        <put-attribute name="body" value="/pages/reportPropietario.jsp"/>
-    </definition>
-    
-    <definition name="t_actualizaPropietario" extends="baseLayout">
-        <put-attribute name="body" value="/pages/updatePropietario.jsp"/>
-    </definition>
-    
-    
-    
-    <definition name="t_registraProducto" extends="baseLayout">
-        <put-attribute name="body" value="/pages/registerProducto.jsp"/>
-    </definition>
-
-	<definition name="t_reportProducto" extends="baseLayout">
-        <put-attribute name="body" value="/pages/reportProducto.jsp"/>
-    </definition>
-    
-    <definition name="t_actualizaProducto" extends="baseLayout">
-        <put-attribute name="body" value="/pages/updateProducto.jsp"/>
-    </definition>
-    
-    
-    
-    <definition name="t_registraProveedor" extends="baseLayout">
-        <put-attribute name="body" value="/pages/registerProveedor.jsp"/>
-    </definition>
-
-	<definition name="t_reportProveedor" extends="baseLayout">
-        <put-attribute name="body" value="/pages/reportProveedor.jsp"/>
-    </definition>
-    
-    <definition name="t_actualizaProveedor" extends="baseLayout">
-        <put-attribute name="body" value="/pages/updateProveedor.jsp"/>
-    </definition>
 
 </tiles-definitions>
 

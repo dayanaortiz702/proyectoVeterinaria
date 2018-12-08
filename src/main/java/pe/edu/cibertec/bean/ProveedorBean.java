@@ -8,25 +8,33 @@ public class ProveedorBean implements Serializable{
 	 * 
 	 */
 	private static final long serialVersionUID = -9154415703909363935L;
-	private String idProveedor;
-	private String idTipoDocumento;
+	private Integer idProveedor;
+	private Integer idTipoDocumento;
 	private String nroDocumento;
 	private String razonSocial;
 	private String telefono;
 	private String direccion;
 	
+	private TipoDocumentoBean tipoDocumento;
 	
+
+	public TipoDocumentoBean getTipoDocumento() {
+		return tipoDocumento;
+	}
+	public void setTipoDocumento(TipoDocumentoBean tipoDocumento) {
+		this.tipoDocumento = tipoDocumento;
+	}
 	
-	public String getIdProveedor() {
+	public Integer getIdProveedor() {
 		return idProveedor;
 	}
-	public void setIdProveedor(String idProveedor) {
+	public void setIdProveedor(Integer idProveedor) {
 		this.idProveedor = idProveedor;
 	}
-	public String getIdTipoDocumento() {
+	public Integer getIdTipoDocumento() {
 		return idTipoDocumento;
 	}
-	public void setIdTipoDocumento(String idTipoDocumento) {
+	public void setIdTipoDocumento(Integer idTipoDocumento) {
 		this.idTipoDocumento = idTipoDocumento;
 	}
 	public String getNroDocumento() {

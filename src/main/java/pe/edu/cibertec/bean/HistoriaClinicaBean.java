@@ -16,6 +16,38 @@ public class HistoriaClinicaBean implements Serializable{
 	private Integer idPaciente;
 	private Integer idPropietario;
 	private Integer idDistrito;
+	
+	private TipoPacienteBean tipoPaciente;
+	private PacienteBean paciente;
+	private PropietarioBean propietario;
+	private DistritoBean distrito;
+	
+	
+	
+	public TipoPacienteBean getTipoPaciente() {
+		return tipoPaciente;
+	}
+	public void setTipoPaciente(TipoPacienteBean tipoPaciente) {
+		this.tipoPaciente = tipoPaciente;
+	}
+	public PacienteBean getPaciente() {
+		return paciente;
+	}
+	public void setPaciente(PacienteBean paciente) {
+		this.paciente = paciente;
+	}
+	public PropietarioBean getPropietario() {
+		return propietario;
+	}
+	public void setPropietario(PropietarioBean propietario) {
+		this.propietario = propietario;
+	}
+	public DistritoBean getDistrito() {
+		return distrito;
+	}
+	public void setDistrito(DistritoBean distrito) {
+		this.distrito = distrito;
+	}
 	public Integer getIdFicha() {
 		return idFicha;
 	}
