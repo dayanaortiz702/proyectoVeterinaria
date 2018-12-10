@@ -57,7 +57,7 @@
 	            
 	            <ul class="sub-menu collapse" id="mantenimiento">	              
 	              <li><a class="" href="${pageContext.request.contextPath}/pages/a_reportPaciente2.action">Pacientes</a></li>
-<!-- 	              <li><a class="" href="form_validation.html">Historia Clínica</a></li> -->
+	              <li><a class="" href="${pageContext.request.contextPath}/pages/a_reportHistoria2.action">Historia Clínica</a></li>
 	              <li><a class="" href="${pageContext.request.contextPath}/pages/a_reportPropietario2.action">Propietarios</a></li>
 	              <li><a href="${pageContext.request.contextPath}/pages/a_reportEmpleado2.action">Empleados</a></li>
 	              <li><a class="" href="${pageContext.request.contextPath}/pages/a_reportProducto2.action">Productos</a></li>
@@ -72,8 +72,8 @@
                   <span class="menu-arrow arrow_carrot-right"></span>
 	            </a>
 	            <ul class="sub" id="seguridad">	
-	              <li><a class="" href="#">Usuarios</a></li>
-	              <li><a class="" href="#">Perfiles</a></li>
+<%-- 	              <li><a class="" href="${pageContext.request.contextPath}/pages/a_reportUsuario2.action">Usuarios</a></li> --%>
+<%-- 	              <li><a class="" href="${pageContext.request.contextPath}/pages/a_reportPerfil2.action">Perfiles</a></li> --%>
 	            </ul>
           </li>
           
@@ -84,14 +84,14 @@
                   <span class="menu-arrow arrow_carrot-right"></span>
                 </a>
 	            <ul class="sub-menu collapse" id="configuracion">	
-	              <li><a class="" href="#">Distrito</a></li>
-	              <li><a class="" href="#">Tipo de paciente</a></li>
-	              <li><a class="" href="#">Unidad de medida</a></li>
-	              <li><a class="" href="#">Tipo de documento</a></li>
-	              <li><a class="" href="#">Cargo</a></li>
-	              <li><a class="" href="#">Estado</a></li>
-	              <li><a class="" href="#">Marca</a></li>
-	              <li><a class="" href="#">Categoria</a></li>
+<%-- 	              <li><a class="" href="${pageContext.request.contextPath}/pages/a_reportDistrito2.action">Distrito</a></li> --%>
+<%-- 	              <li><a class="" href="${pageContext.request.contextPath}/pages/a_reportTipoPaciente2.action">Tipo de paciente</a></li> --%>
+<%-- 	              <li><a class="" href="${pageContext.request.contextPath}/pages/a_reportUnidad2.action">Unidad de medida</a></li> --%>
+<%-- 	              <li><a class="" href="${pageContext.request.contextPath}/pages/a_reportDocumento2.action">Tipo de documento</a></li> --%>
+<%-- 	              <li><a class="" href="${pageContext.request.contextPath}/pages/a_reportCargo2.action">Cargo</a></li> --%>
+<%-- 	              <li><a class="" href="${pageContext.request.contextPath}/pages/a_reportEstado2.action">Estado</a></li> --%>
+<%-- 	              <li><a class="" href="${pageContext.request.contextPath}/pages/a_reportMarca2.action">Marca</a></li> --%>
+<%-- 	              <li><a class="" href="${pageContext.request.contextPath}/pages/a_reportCategoria2.action">Categoria</a></li> --%>
 	            </ul>
           </li>
 		</ul>

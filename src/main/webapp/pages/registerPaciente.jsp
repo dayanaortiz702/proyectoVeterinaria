@@ -40,130 +40,126 @@
 		<div class="row container ml-3">
           <div class="col-lg-10 mx-auto">
             <section>
-            	<h2>Agregar Nuevo Paciente</h2>
-			<div>
-				<form action="registerPaciente" class="form-horizontal mt-5">
-				
-					<div class="form-group row">
-						<label class="col-sm-2 control-label">Nombre</label>
-						<div class="col-sm-10">
-							<input type="text" class="form-control" name="nombre">
-						</div>
-					</div>
-	
-				  <div class="form-group row">
-                       <label class="control-label col-sm-2">Fecha de nacimiento</label>
+            	<h2>Agregar nuevo Empleado</h2><br>
+              <div >
+                <form action="registerPaciente.action"  class="form-horizontal mt-5" >
+                  <div class="form-group row">
+                    <label class="col-sm-2 control-label">Nombre</label>
+                    <div class="col-sm-10">
+                      <input type="text" class="form-control" name="registro.nombre">
+                    </div>
+                  </div>
+                  
+                  <div class="form-group row">
+                    <label class="col-sm-2 control-label">Fecha de nacimiento</label>
+                    <div class="col-sm-10">
+                     <input id="dp2" type="text" value="" size="16" class="form-control" name="registro.fecha_nacimiento">
+                    </div>
+                  </div>
+                  
+                  <div class="form-group row">
+                    <label class="col-sm-2 control-label">Fecha de ingreso</label>
+                    <div class="col-sm-10">
+                    	<input id="dp6" type="text" value="" size="16" class="form-control" name="registro.fecha_ingreso">
+                    </div>
+                  </div>
+           
+                  <div class="form-group row">
+                    <label class="col-sm-2 control-label">Sexo</label>
+                    <div class="col-sm-10">
+                      <input type="text" class="form-control" name="registro.sexo">
+                    </div>
+                  </div>
+                  
+                  <div class="form-group row">
+                    <label class="col-sm-2 control-label">Color</label>
+                    <div class="col-sm-10">
+                      <input type="text" class="form-control" name="registro.color">
+                    </div>
+                  </div>
+                  
+                  <div class="form-group row">
+                    <label class="col-sm-2 control-label">Particularidad</label>
+                    <div class="col-sm-10">
+                      <input type="text" class="form-control" name="registro.particularidad">
+                    </div>
+                  </div>
+                  
+                  <div class="form-group row">
+                    <label class="col-sm-2 control-label">Peso</label>
+                    <div class="col-sm-10">
+                      <input type="text" class="form-control" name="registro.peso">
+                    </div>
+                  </div>                  
+                         
+                  <div class="form-group row">
+                       <label class="control-label col-sm-2">Frecuencia cardiaca</label>
                        <div class="col-sm-10">
-                         <input id="dp2" type="text" value="" size="16" class="form-control" name="fecha_nacimiento">
+                         <input type="text" class="form-control" name="registro.frecuencia_cardiaca">
                        </div>
                   </div>
                   
                   <div class="form-group row">
-                       <label class="control-label col-sm-2">Fecha de ingreso</label>
+                       <label class="control-label col-sm-2">Frecuencia respiratoria</label>
                        <div class="col-sm-10">
-                         <input id="dp6" type="text" value="" size="16" class="form-control" name="fecha_ingreso">
+                         <input type="text" class="form-control" name="registro.frecuencia_respiratoria">
                        </div>
-                  </div>      
-						<div class="form-group row">
-							<label class="col-sm-2 control-label">Color</label>
-							<div class="col-sm-10">
-								<input type="text" class="form-control" name="color">
-							</div>
-						</div>
-						
-						<div class="form-group row">
-							<label class="col-sm-2 control-label">Sexo</label>
-							<div class="col-sm-10">
-								<input type="text" class="form-control" name="sexo">
-							</div>
-						</div>
-						
-						<div class="form-group row">
-							<label class="col-sm-2 control-label">Particularidad</label>
-							<div class="col-sm-10">
-								<input type="text" class="form-control" name="particularidad">
-							</div>
-						</div>
-						<div class="form-group row">
-							<label class="col-sm-2 control-label">Peso</label>
-							<div class="col-sm-10">
-								<input type="text" class="form-control" name="peso">
-							</div>
-						</div>
-						
-						<div class="form-group row">
-							<label class="col-sm-2 control-label">Frecuencia Cardiaca</label>
-							<div class="col-sm-10">
-								<input type="text" class="form-control" name="frecuencia_cardiaca">
-							</div>
-						</div>
-						
-						<div class="form-group row">
-							<label class="col-sm-2 control-label">Frecuencia Respiratoria</label>
-							<div class="col-sm-10">
-								<input type="text" class="form-control" name="frecuencia_respiratoria">
-							</div>
-						</div>
-						
-						<div class="form-group row">
-							<label class="col-sm-2 control-label">Color Mucosa</label>
-							<div class="col-sm-10">
-								<input type="text" class="form-control" name="color_mucosa">
-							</div>
-						</div>
-						
-						<div class="form-group row">
-							<label class="col-sm-2 control-label">Turgencia Piel</label>
-							<div class="col-sm-10">
-								<input type="text" class="form-control" name="turgencia_piel">
-							</div>
-						</div>
-						
+                  </div>       
+                            
+                  
+                  <div class="form-group row">
+                    <label class="col-sm-2 control-label">Color mucosa</label>
+                    <div class="col-sm-10">
+                     <input type="text" class="form-control" name="registro.color_mucosa">
+                     </div>
+                  </div>
+                  
+                  <div class="form-group row">
+                    <label class="col-sm-2 control-label">Turgencia piel</label>
+                    <div class="col-sm-10">
+                      <input type="text" class="form-control" name="registro.turgencia_piel">
+                    </div>
+                  </div>
+                  
+                  <div class="form-group row">
+                    <label class="col-sm-2 control-label">Estado reproductivo</label>
+                    <div class="col-sm-10">
+                      <input type="text" class="form-control" name="registro.estado_reproductivo">
+                    </div>
+                  </div>
+                  
+                  <div class="form-group row">
+                    <label class="col-sm-2 control-label">Estado vacuna</label>
+                    <div class="col-sm-10">
+                      <input type="text" class="form-control" name="registro.estado_vacuna">
+                    </div>
+                  </div>
+                  
+                  <div class="form-group row">
+                    <label class="col-sm-2 control-label">Estado desparasitacion</label>
+                    <div class="col-sm-10">
+                      <input type="text" class="form-control" name="registro.estado_desparasitacion">
+                    </div>
+                  </div>
+                  
+                  
+                  <div class="form-group row">
+                      <div class="col-lg-offset-2 col-lg-10">
+                        <button class="btn btn-success" type="submit">Registrar</button>
+                        
+                      </div>
+                      	
+                  </div>
+                  
+                </form>               
 	
-						<div class="form-group row">
-							<label class="col-sm-2 control-label">Estado Reproductivo</label>
-							<div class="col-sm-10">
-								<input type="text" class="form-control" name="estado_reproductivo">
-							</div>
-						</div>
-						
-						<div class="form-group row">
-							<label class="col-sm-2 control-label">Estado Vacuna</label>
-							<div class="col-sm-10">
-								<input type="text" class="form-control" name="estado_vacuna">
-							</div>
-						</div>
-						
-						<div class="form-group row">
-							<label class="col-sm-2 control-label">Estado Desparasitacion</label>
-							<div class="col-sm-10">
-								<input type="text" class="form-control" name="estado_desparasitacion">
-							</div>
-						</div>
-
-						<div class="form-group row">
-							<div class="col-lg-offset-2 col-lg-10">
-								<button class="btn btn-success" type="submit">Registrar</button>
-								<s:if test="ctr>0">
-									<span style="color: green;"><s:property value="msg" /></span>
-								</s:if>
-								<s:else>
-									<span style="color: red;"><s:property value="msg" /></span>
-								</s:else>
-							</div>
-
-						</div>
-
-					</form>
-
-					<form action="listaPaciente.jsp">
-						<input type="submit" value="Listar pacientes" class="btn btn-info" />
-					</form>
-
-				</div>
-			</section>
-		</div>
-
+				<form action="listaPaciente.jsp">
+					<input type="submit" value="Listar pacientes" class="btn btn-info" />		
+				</form>	
+	
+              </div>
+            </section>
+         </div>
 	</div>
 
             	
@@ -176,8 +172,8 @@
     <!--main content end-->
 	</div>
 	
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
-	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" ></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
 		
 	<!-- jquery ui -->
 	  <script src="../js/jquery-ui-1.9.2.custom.min.js"></script>

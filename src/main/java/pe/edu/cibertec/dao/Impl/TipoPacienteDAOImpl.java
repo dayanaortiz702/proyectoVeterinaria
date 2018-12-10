@@ -18,7 +18,7 @@ public class TipoPacienteDAOImpl implements ITipoPacienteDAO{
 		
 		int insertados = -1;
 		try {
-			String sql = "INSERT INTO tb_cargo VALUES (null,?)";
+			String sql = "INSERT INTO tb_tipo_paciente VALUES (null,?)";
 			con = new conectaDB().getConexion();
 			
 			int i = 1;			
@@ -49,7 +49,7 @@ public class TipoPacienteDAOImpl implements ITipoPacienteDAO{
 		
 		int insertados = -1;
 		try {
-			String sql = "delete from tb_cargo where idCargo = ?";
+			String sql = "delete from tb_tipo_paciente where idCargo = ?";
 			con = new conectaDB().getConexion();
 			
 			int i = 1;			
@@ -79,7 +79,7 @@ public class TipoPacienteDAOImpl implements ITipoPacienteDAO{
 		
 		int insertados = -1;
 		try {
-			String sql = "update tb_cargo set nombre = ? where idCargo = ?";
+			String sql = "update tb_tipo_paciente set nombre = ? where idCargo = ?";
 			con = new conectaDB().getConexion();
 			
 			int i = 1;			
@@ -112,7 +112,7 @@ public class TipoPacienteDAOImpl implements ITipoPacienteDAO{
 		List<TipoPacienteBean> lista = new ArrayList<TipoPacienteBean>();
 		
 		try {
-			String sql = "select*from tb_cargo";
+			String sql = "select*from tb_tipo_paciente";
 			con = new conectaDB().getConexion();
 			pstm = con.prepareStatement(sql);
 			rs = pstm.executeQuery();

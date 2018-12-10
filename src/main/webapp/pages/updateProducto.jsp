@@ -41,19 +41,20 @@
              	<h2>Modificar Producto</h2>
               <div >
                 <form action="updateProductoList" method="post"  class="form-horizontal mt-5" >
-                  <input type="text" name="idProducto" value='<s:property value="idProducto"/>'>
+                  <input type="text" name="registro.idProducto" value='<s:property value="registro.idProducto"/>'>
                   
                   <div class="form-group row">
-                    <label class="col-sm-2 control-label">descripcion</label>
+                    <label class="col-sm-2 control-label">Descripcion</label>
                     <div class="col-sm-10">
-                      <input type="text" class="form-control" name="descripcion" value='<s:property value="descripcion"/>'>
+                      <input type="text" class="form-control" name="registro.descripcion" value='<s:property value="registro.descripcion"/>'>
                     </div>
                   </div>
                   
                  <div class="form-group row">
                     <label class="col-sm-2 control-label">Marca</label>
                     <div class="col-sm-10">
-                    	<input type="text" class="form-control" name="idMarca" value='<s:property value="idMarca"/>'>
+                    	<s:select name="registro.idMarca" list="cbMarca" listKey="idMarca" listValue="descripcion" value="registro.idMarca" />
+                      	
                     </div>
                   </div>
                   
@@ -61,36 +62,37 @@
                   <div class="form-group row">
                     <label class="col-sm-2 control-label">Precio de Compra</label>
                     <div class="col-sm-10">
-                      <input type="text" class="form-control" name="precio_compra" value='<s:property value="precio_compra"/>'>
+                      <input type="text" class="form-control" name="registro.precioCompra" value='<s:property value="precioCompra"/>'>
                     </div>
                   </div>
                   
                   <div class="form-group row">
                     <label class="col-sm-2 control-label">Categoria</label>
                     <div class="col-sm-10">
-                    	<input type="text" class="form-control" name="idCategoria" value='<s:property value="idCategoria"/>'>
+                    	<s:select name="registro.idCategoria" list="cbCategoria" listKey="idCategoria" listValue="categoria" value="registro.idCategoria" />
+                      	
                     </div>
                   </div>
                   
                   <div class="form-group row">
                     <label class="col-sm-2 control-label">Proveedor</label>
                     <div class="col-sm-10">
-                    	<input type="text" class="form-control" name="idProveedor" value='<s:property value="idProveedor"/>'>
-                    </div>
+                    	<s:select name="registro.idProveedor" list="cbProveedor" listKey="idProveedor" listValue="razonSocial" value="registro.idProveedor" />
+                      	   </div>
                   </div>
                   
                    <div class="form-group row">
                     <label class="col-sm-2 control-label">Unidad de Medida</label>
                     <div class="col-sm-10">
-                    	<input type="text" class="form-control" name="idUnidad" value='<s:property value="idUnidad"/>'>
-                    </div>
+                    	<s:select name="registro.idUniMedida" list="cbUnidad" listKey="idUniMedida" listValue="razonSocial" value="registro.idUniMedida" />
+                     </div>
                   </div>
                   
                   
                   <div class="form-group row">
                     <label class="col-sm-2 control-label">Stock Actual</label>
                     <div class="col-sm-10">
-                      <input type="text" class="form-control" name="stock_actual" value='<s:property value="stock_actual"/>'>
+                      <input type="text" class="form-control" name="registro.stockActual" value='<s:property value="registro.stockActual"/>'>
                     </div>
                   </div>
                   
@@ -98,25 +100,20 @@
                   <div class="form-group row">
                     <label class="col-sm-2 control-label">Stock Minimo</label>
                     <div class="col-sm-10">
-                      <input type="text" class="form-control" name="stock_minimo" value='<s:property value="stock_minimo"/>'> 
+                      <input type="text" class="form-control" name="registro.stockMinimo" value='<s:property value="registro.stockMinimo"/>'> 
                     </div>
                   </div>
                   
                   <div class="form-group row">
                       <div class="col-lg-offset-2 col-lg-10">
-                        <button name="submitType" class="btn btn-success" type="submit">Modificar</button>    
-                       	<s:if test="ctr>0">
-							<span style="color: green;"><s:property value="msg" /></span>
-						</s:if>
-						<s:else>
-							<span style="color: red;"><s:property value="msg" /></span>
-						</s:else>                 
+                        <button name="submitType" class="btn btn-success" type="submit">Modificar</button>                           	              
                       </div>                      	
-                  </div>                  
+                  </div>   
+                            
                 </form>               
 	
 				<form action="a_reportProducto">
-					<input type="submit" value="Listar Productos" class="btn btn-info" />		
+					<input type="submit" value="Listar Producto" class="btn btn-info" />		
 				</form>	
 	
               </div>

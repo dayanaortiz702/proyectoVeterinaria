@@ -41,61 +41,117 @@
              	<h2>Modificar Paciente</h2> <br>
               <div class="">
                 <form action="updatePacienteList" method="post"  class="form-horizontal mt-3 mx-auto" >
-                  <input class="form-control" type="hidden" readonly="readonly" name="idPaciente" value='<s:property value="idPaciente"/>'>
+                  <input class="form-control" type="hidden" name="registro.idPaciente" value='<s:property value="registro.idPaciente"/>'>
                                   
+                  <div class="form-group row">
+                    <label class="col-sm-2 control-label">Nombre</label>
+                    <div class="col-sm-10">
+                      <input type="text" class="form-control" name="registro.nombre" value='<s:property value="registro.nombre"/>'>
+                    </div>
+                  </div>
+                  
+                  <div class="form-group row">
+                    <label class="col-sm-2 control-label">Fecha de nacimiento</label>
+                    <div class="col-sm-10">
+                     <input id="dp2" type="text" value="" size="16" class="form-control" name="registro.fecha_nacimiento" value='<s:property value="registro.fecha_nacimiento"/>'>
+                    </div>
+                  </div>
+                  
+                  <div class="form-group row">
+                    <label class="col-sm-2 control-label">Fecha de ingreso</label>
+                    <div class="col-sm-10">
+                    	<input id="dp6" type="text" value="" size="16" class="form-control" name="registro.fecha_ingreso" value='<s:property value="registro.fecha_ingreso"/>'> 
+                    </div>
+                  </div>
+           
+                  <div class="form-group row">
+                    <label class="col-sm-2 control-label">Sexo</label>
+                    <div class="col-sm-10">
+                      <input type="text" class="form-control" name="registro.sexo" value='<s:property value="registro.sexo"/>'>
+                    </div>
+                  </div>
+                                    
                   <div class="form-group row">
                     <label class="col-sm-2 control-label">Color</label>
                     <div class="col-sm-10">
-                      <input type="text" class="form-control" name="color" value='<s:property value="color"/>'>
+                      <input type="text" class="form-control" name="registro.color" value='<s:property value="registro.color"/>'>
                     </div>
                   </div>
                   
                   <div class="form-group row">
                     <label class="col-sm-2 control-label">Particularidad</label>
                     <div class="col-sm-10">
-                      <input type="text" class="form-control" name="particularidad" value='<s:property value="particularidad"/>'>
+                      <input type="text" class="form-control" name="particularidad" value='<s:property value="registro.particularidad"/>'>
                     </div>
                   </div>
-                  
+                   
                   <div class="form-group row">
                     <label class="col-sm-2 control-label">Peso</label>
                     <div class="col-sm-10">
-                      <input type="text" class="form-control" name="peso" value='<s:property value="peso"/>'>
-                    </div>
-                  </div>
-                
+                      <input type="text" class="form-control" name="registro.peso" value='<s:property value="registro.peso"/>'>
+                    </div> 
+                  </div>                  
+                         
                   <div class="form-group row">
-                    <label class="col-sm-2 control-label">Turgencia Piel</label>
+                       <label class="control-label col-sm-2">Frecuencia cardiaca</label>
+                       <div class="col-sm-10">
+                         <input type="text" class="form-control" name="registro.frecuencia_cardiaca" value='<s:property value="registro.frecuencia_cardiaca"/>'>
+                       </div>
+                  </div>
+                  
+                  <div class="form-group row">
+                       <label class="control-label col-sm-2">Frecuencia respiratoria</label>
+                       <div class="col-sm-10">
+                         <input type="text" class="form-control" name="registro.frecuencia_respiratoria" value='<s:property value="registro.frecuencia_respiratoria"/>'>
+                       </div>
+                  </div>       
+                            
+                  
+                  <div class="form-group row">
+                    <label class="col-sm-2 control-label">Color mucosa</label>
                     <div class="col-sm-10">
-                      <input type="text" class="form-control" name="turgencia_piel" value='<s:property value="turgencia_piel"/>'>
-                    </div>
+                     <input type="text" class="form-control" name="registro.color_mucosa" value='<s:property value="registro.color_mucosa"/>'>
+                     </div>
                   </div>
                   
                   <div class="form-group row">
-                    <label class="col-sm-2 control-label">Estado Reproductivo</label>
+                    <label class="col-sm-2 control-label">Turgencia piel</label>
                     <div class="col-sm-10">
-                      <input type="text" class="form-control" name="estado_reproductivo" value='<s:property value="estado_reproductivo"/>'>
+                      <input type="text" class="form-control" name="registro.turgencia_piel" value='<s:property value="registro.turgencia_piel"/>'>
                     </div>
                   </div>
                   
+                  <div class="form-group row">
+                    <label class="col-sm-2 control-label">Estado reproductivo</label>
+                    <div class="col-sm-10">
+                      <input type="text" class="form-control" name="registro.estado_reproductivo" value='<s:property value="registro.estado_reproductivo"/>'>
+                    </div>
+                  </div>
                   
                   <div class="form-group row">
+                    <label class="col-sm-2 control-label">Estado vacuna</label>
+                    <div class="col-sm-10">
+                      <input type="text" class="form-control" name="registro.estado_vacuna" value='<s:property value="registro.estado_vacuna"/>'>
+                    </div>
+                  </div>
+                  
+                  <div class="form-group row">
+                    <label class="col-sm-2 control-label">Estado desparasitacion</label>
+                    <div class="col-sm-10">
+                      <input type="text" class="form-control" name="registro.estado_desparasitacion" value='<s:property value="registro.estado_desparasitacion"/>'>
+                    </div>
+                  </div>
+                  
+                   <div class="form-group row">
                       <div class="col-lg-offset-2 col-lg-10">
-                        <button name="submitType" class="btn btn-success" type="submit">Modificar</button>    
-                       	<s:if test="ctr>0">
-							<span style="color: red;"><s:property value="msg" /></span>
-						</s:if>
-						<s:else>
-							<span style="color: green;"><s:property value="msg" /></span>
-						</s:else>                 
+                        <button name="submitType" class="btn btn-success" type="submit">Modificar</button>                           	              
                       </div>                      	
                   </div>                  
                 </form>               
 	
-				<form action="a_reportEmpleado">
+				<form action="a_reportPaciente">
 					<input type="submit" value="Listar pacientes" class="btn btn-info" />		
 				</form>	
-	
               </div>
              	
              

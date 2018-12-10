@@ -109,6 +109,7 @@
                   <div class="form-group row">
                     <label class="col-sm-2 control-label">Cargo</label>
                     <div class="col-sm-10">
+                     
                       <s:select name="registro.idCargo" list="cbCargo" listKey="idCargo" listValue="nombre"  />
                     </div>
                   </div>

@@ -1,5 +1,4 @@
 <%@taglib prefix="s" uri="/struts-tags"%>
-<%@page import="java.sql.ResultSet"%>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -40,58 +39,27 @@
 		<div class="row container ml-3">
           <div class="col-lg-10 mx-auto">
             <section>
- 				<h2>Agregar nuevo Proveedor</h2>
+             <h2>Agregar nuevo Perfil</h2><br>
               <div >
-                <form action="registerProveedor"  class="form-horizontal mt-5" >
-                  
-                  
+                <form action="registerPerfil"  class="form-horizontal mt-5" >
                   <div class="form-group row">
-                    <label class="col-sm-2 control-label">Tipo de Documento</label>
+                    <label class="col-sm-2 control-label">Nombre</label>
                     <div class="col-sm-10">
-                    	<s:select name="registro.idTipoDocumento" list="cbTipoDoc" listKey="idTipoDocumento" listValue="descripcion"  />
-                    </div>
-                  </div>
-           
-                  <div class="form-group row">
-                    <label class="col-sm-2 control-label">Nro de Documento</label>
-                    <div class="col-sm-10">
-                      <input type="text" class="form-control" name="registro.nroDocumento">
+                      <input type="text" class="form-control" name="registro.perfil">
                     </div>
                   </div>
                   
-                   
                   <div class="form-group row">
-                    <label class="col-sm-2 control-label">Razon Social</label>
+                    <label class="col-sm-2 control-label">Descripcion</label>
                     <div class="col-sm-10">
-                      <input type="text" class="form-control" name="registro.razonSocial">
+                      <input type="text" class="form-control" name="registro.descripcion">
                     </div>
                   </div>
                   
-                  
-                  <div class="form-group row">
-                    <label class="col-sm-2 control-label">Teléfono</label>
-                    <div class="col-sm-10">
-                      <input type="text" class="form-control" name="registro.telefono">
-                    </div>
-                  </div>
-                 
-                  
-                  <div class="form-group row">
-                    <label class="col-sm-2 control-label">Dirección</label>
-                    <div class="col-sm-10">
-                      <input type="text" class="form-control" name="registro.direccion">
-                    </div>
-                  </div>                  
-                 
-                 <div class="form-group row">
-                      <div class="col-lg-offset-2 col-lg-10">
-                        <button class="btn btn-success" type="submit">Registrar</button>
-                        
-                      </div>
                 </form>               
 	
-				<form action="listaProveedor.jsp">
-					<input type="submit" value="Listar Proveedores" class="btn btn-info" />		
+				<form action="listaPerfil.jsp">
+					<input type="submit" value="Listar Cargos" class="btn btn-info" />		
 				</form>	
 	
               </div>
@@ -108,8 +76,8 @@
     <!--main content end-->
 	</div>
 	
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
-	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
 		
 	<!-- jquery ui -->
 	  <script src="../js/jquery-ui-1.9.2.custom.min.js"></script>

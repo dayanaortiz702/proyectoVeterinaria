@@ -42,7 +42,7 @@
              
               <div>
                 <form action="updateEmpleadoList" method="post"  class="form-horizontal mt-5" >
-                  <input type="text"  name="registro.idEmpleado" value='<s:property value="registro.idEmpleado"/>'>
+                  <input type="hidden"  name="registro.idEmpleado" value='<s:property value="registro.idEmpleado"/>'>
                   
                   <div class="form-group row">
                     <label class="col-sm-2 control-label">Nombres</label>

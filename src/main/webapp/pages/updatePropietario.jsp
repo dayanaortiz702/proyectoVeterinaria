@@ -41,68 +41,55 @@
            		<h2>Modificar Propietario</h2>
               <div >
                 <form action="updatePropietarioList" method="post"  class="form-horizontal mt-5" >
-                              <div class="form-group row">
-                    <label class="col-sm-2 control-label">Codigo</label>
-                    <div class="col-sm-10">
-                      <input class="form-control" type="text" readonly="readonly" name="idPropietario" value='<s:property value="idPropietario"/>'>
-                    </div>
-                  </div>
-                  
-                
+                 <input class="form-control" type="hidden" readonly="readonly" name="registro.idPropietario" value='<s:property value="registro.idPropietario"/>'>
+               
                   <div class="form-group row">
                     <label class="col-sm-2 control-label">Nombres</label>
                     <div class="col-sm-10">
-                      <input type="text" class="form-control" name="nombres" value='<s:property value="nombres"/>'>
+                      <input type="text" class="form-control" name="registro.nombres" value='<s:property value="registro.nombres"/>'>
                     </div>
                   </div>
                   
                   <div class="form-group row">
                     <label class="col-sm-2 control-label">Apellidos</label>
                     <div class="col-sm-10">
-                      <input type="text" class="form-control" name="apellidos" value='<s:property value="apellidos"/>'>
+                      <input type="text" class="form-control" name="registro.apellidos" value='<s:property value="registro.apellidos"/>'>
                     </div>
                   </div>
                   
                   <div class="form-group row">
                     <label class="col-sm-2 control-label">Teléfono</label>
                     <div class="col-sm-10">
-                      <input type="text" class="form-control" name="telefono" value='<s:property value="telefono"/>'> 
+                      <input type="text" class="form-control" name="registro.telefono" value='<s:property value="registro.telefono"/>'> 
                     </div>
                   </div>
                   
                   <div class="form-group row">
                     <label class="col-sm-2 control-label">Correo</label>
                     <div class="col-sm-10">
-                      <input type="text" class="form-control"  name="correo" value='<s:property value="correo"/>'>
+                      <input type="text" class="form-control"  name="registro.correo" value='<s:property value="registro.correo"/>'>
                     </div>
                   </div>
                    <div class="form-group row">
                     <label class="col-sm-2 control-label">Tipo de Documento</label>
                     <div class="col-sm-10">
-                    	
+                    	<s:select name="registro.idTipoDocumento" list="cbDocumento" listKey="idTipoDocumento" listValue="descripcion" value="registro.idTipoDocumento" />
+                      	
                     </div>
                   </div>
                   
                   <div class="form-group row">
                     <label class="col-sm-2 control-label">Nro de Documento</label>
                     <div class="col-sm-10">
-                      <input type="text" class="form-control" name="documento" value='<s:property value="documento"/>'>
+                      <input type="text" class="form-control" name="registro.nroDocumento" value='<s:property value="nroDocumento"/>'>
                     </div>
                   </div>
-
-                 
+                  
                   <div class="form-group row">
                       <div class="col-lg-offset-2 col-lg-10">
-                        <button name="submitType" class="btn btn-success" type="submit">Modificar</button>    
-                       	<s:if test="ctr>0">
-							<span style="color: green;"><s:property value="msg" /></span>
-						</s:if>
-						<s:else>
-							<span style="color: red;"><s:property value="msg" /></span>
-						</s:else>                 
+                        <button name="submitType" class="btn btn-success" type="submit">Modificar</button>                           	              
                       </div>                      	
-                  </div> 
-                                                    
+                  </div>   
                                    
                 </form>               
 	

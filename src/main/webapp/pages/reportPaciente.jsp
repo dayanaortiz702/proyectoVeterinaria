@@ -28,70 +28,42 @@
 			<input type="submit" value="Nuevo Paciente" class="btn btn-success"/>		
 		</form>		
 		
-		<s:if test="noData==true">
 			<table class="table mt-3" >
 				<thead class="thead-dark">
 					<tr>
-					
 						<th scope="col">CODIGO</th>
 						<th scope="col">NOMBRE</th>
 						<th scope="col">FECHA NACIMIENTO</th>
 						<th scope="col">FECHA INGRESO</th>
 						<th scope="col">SEXO</th>
 						<th scope="col">COLOR</th>
-						<th scope="col">PARTICULARIDAD</th>
-						<th scope="col">PESO</th>
-						<th scope="col">FRECUENCIA CARDIACA</th>
-						<th scope="col">FRECUENCIA RESPIRATORIA</th>
-						<th scope="col">COLOR MUCOSA</th>
-						<th scope="col">TURGENCIA</th>
-						<th scope="col">ESTADO REPRODUCCIÓN</th>
-						<th scope="col">ESTADO VACUNA</th>
-						<th scope="col">ESTADO DESPARASITACION</th>
-						<th scope="col">ACCIONES</th>
-
-						
+					
+						<th scope="col">ACCION</th>
 					</tr>
 				</thead>
 				<tbody>
-					<s:iterator value="beanList">
+					<s:iterator value="grdPaciente" var="item" status="estado">
 						<tr>
-							<td><s:property value="idPaciente" /></td>
-							<td><s:property value="nombre" /></td>
-							<td><s:property value="fecha_nacimiento" /></td>
-							<td><s:property value="fecha_ingreso" /></td>
-							<td><s:property value="sexo" /></td>
-							<td><s:property value="color" /></td>
-							<td><s:property value="particularidad" /></td>
-							<td><s:property value="peso" /></td>
-							<td><s:property value="frecuencia_cardiaca" /></td>			
-							<td><s:property value="frecuencia_respiratoria" /></td>
-							<td><s:property value="color_mucosa" /></td>	
-							<td><s:property value="turgencia_piel" /></td>
-							<td><s:property value="estado_reproductivo" /></td>
-							<td><s:property value="estado_vacuna" /></td>
-							<td><s:property value="estado_desparasitacion" /></td>
-							
-
+							<td scope="row"><s:property value="#item.idPaciente" /></td>
+							<td><s:property value="#item.nombre" /></td>
+							<td><s:property value="#item.fecha_nacimiento" /></td>
+							<td><s:property value="#item.fecha_ingreso"/></td>
+							<td><s:property value="#item.sexo" /></td>
+							<td><s:property value="#item.color" /></td>
 							<td>
-								<a href="updatePaciente.action?submitType=updatedata&idPaciente=<s:property value="idPaciente"/>">
-									<i class="fas fa-edit"></i>
-								</a>
-								<a href="deletePaciente.action?idPaciente=<s:property value="idPaciente"/>">
-									<i class="fas fa-trash-alt"></i>
-								</a>
+								<s:a action="updatePaciente">
+						      		<s:param name="codigo" value="#item.idPaciente"></s:param>
+						      		<i class="fas fa-edit"></i>
+						      	</s:a>
+						      	<s:a action="deletePaciente">
+						      		<s:param name="codigo" value="#item.idPaciente"></s:param>
+						      		<i class="fas fa-trash-alt"></i>
+						      	</s:a>
 							</td>
-						</tr>
-					</s:iterator>
-				</tbody>
-			</table>
-		</s:if>
-		<s:else>
-			<div style="color: red;">No existen datos</div>
-		</s:else>
-
-      	
-      	
+					    </tr>	
+				  	</s:iterator>	       
+				  </tbody>
+				</table>
       	
       </section>
    	  </section>

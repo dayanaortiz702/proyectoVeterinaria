@@ -22,7 +22,7 @@ public class CargoAction extends ActionSupport{
 	private CargoBean registro = new CargoBean();
 	private int codigo;
 	private String mensaje;
-	private static final Log log = LogFactory.getLog(TipoDocumentoAction.class);
+	private static final Log log = LogFactory.getLog(CargoAction.class);
 	
 	public String execute(){
 		log.info("En listar cargo");
@@ -36,7 +36,7 @@ public class CargoAction extends ActionSupport{
 		return SUCCESS;
 	}
 	
-	public String nuevoDocumento() {
+	public String nuevoCargo() {
 		log.info("En nuevo cargo");
 		
 		try {
@@ -48,7 +48,7 @@ public class CargoAction extends ActionSupport{
 		return SUCCESS;
 	}
 	
-	public String insertarDocumento() {
+	public String insertarCargo() {
 		log.info("En insertar cargo");
 		try {
 			cargoService.insertar(registro);
@@ -58,7 +58,7 @@ public class CargoAction extends ActionSupport{
 		return execute();
 	}
 	
-	public String eliminarDocumento() {
+	public String eliminarCargo() {
 		log.info("En eliminar cargo");
 		
 		try {
@@ -71,7 +71,7 @@ public class CargoAction extends ActionSupport{
 		return execute();
 	}
 	
-	public String editarDocumento() {
+	public String editarCargo() {
 		log.info("En editar cargo");
 		
 		try {
@@ -83,7 +83,7 @@ public class CargoAction extends ActionSupport{
 		return SUCCESS;
 	}
 	
-	public String actualizarUsuario() {
+	public String actualizarCargo() {
 		log.info("En actualizar cargo");
 		
 		try {

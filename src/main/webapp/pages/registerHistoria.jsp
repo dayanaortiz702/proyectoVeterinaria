@@ -1,5 +1,4 @@
 <%@taglib prefix="s" uri="/struts-tags"%>
-<%@page import="java.sql.ResultSet"%>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -40,62 +39,63 @@
 		<div class="row container ml-3">
           <div class="col-lg-10 mx-auto">
             <section>
-             <h2>Agregar nuevo Propietario</h2><br>
-              <div>
-                  <form action="registerPropietario"  class="form-horizontal mt-5" >
+             <h2>Agregar nueva Historia Clinica</h2><br>
+              <div >
+                <form action="registerHistoria"  class="form-horizontal mt-5" >
                   <div class="form-group row">
-                    <label class="col-sm-2 control-label">Nombres</label>
+                    <label class="col-sm-2 control-label">Fecha</label>
                     <div class="col-sm-10">
-                      <input type="text" class="form-control" name="registro.nombres">
+                      <input id="dp2" type="text" value="" size="16" class="form-control" name="registro.fecha">
+                     
                     </div>
                   </div>
                   
                   <div class="form-group row">
-                    <label class="col-sm-2 control-label">Apellidos</label>
+                    <label class="col-sm-2 control-label">Motivo Consulta</label>
                     <div class="col-sm-10">
-                      <input type="text" class="form-control" name="registro.apellidos">
+                      <input type="text" class="form-control" name="registro.motivoConsulta">
                     </div>
                   </div>
+                                   
                    <div class="form-group row">
-                    <label class="col-sm-2 control-label">Teléfono</label>
+                    <label class="col-sm-2 control-label">Tipo paciente</label>
                     <div class="col-sm-10">
-                      <input type="text" class="form-control" name="registro.telefono">
+                     <s:select name="registro.idTipoPaciente" list="cbTipoPaciente" listKey="idTipo" listValue="tipo"  />
                     </div>
                   </div>
                   
                   <div class="form-group row">
-                    <label class="col-sm-2 control-label">Correo</label>
+                    <label class="col-sm-2 control-label">Paciente</label>
                     <div class="col-sm-10">
-                      <input type="text" class="form-control" name="registro.correo">
+                     <s:select name="registro.idPaciente" list="cbPaciente" listKey="idPaciente" listValue="nombre"  />
                     </div>
                   </div>
                   
                   <div class="form-group row">
-                    <label class="col-sm-2 control-label">Tipo de Documento</label>
+                    <label class="col-sm-2 control-label">Propietario</label>
                     <div class="col-sm-10">
-                    	<s:select name="registro.idTipoDocumento" list="cbDocumento" listKey="idTipoDocumento" listValue="descripcion"  />
+                     <s:select name="registro.idPropietario" list="cbPropietario" listKey="idPropietario" listValue="nombres"  />
                     </div>
                   </div>
-           
+                                    
                   <div class="form-group row">
-                    <label class="col-sm-2 control-label">Nro de Documento</label>
+                    <label class="col-sm-2 control-label">Distrito</label>
                     <div class="col-sm-10">
-                      <input type="text" class="form-control" name="registro.nroDocumento">
+                     <s:select name="registro.idDistrito" list="cbDistrito" listKey="idDistrito" listValue="nombre"  />
                     </div>
-                  </div>       	
-               
-               <div class="form-group row">
+                  </div>
+                  
+                  <div class="form-group row">
                       <div class="col-lg-offset-2 col-lg-10">
                         <button class="btn btn-success" type="submit">Registrar</button>
                         
                       </div>
                 </form>               
 	
-				<form action="listaPropietario.jsp">
-					<input type="submit" value="Listar Propietario" class="btn btn-info" />		
-				</form>
+				<form action="listaDistrito.jsp">
+					<input type="submit" value="Listar distritos" class="btn btn-info" />		
+				</form>	
 	
-             
               </div>
             </section>
          </div>
@@ -110,8 +110,8 @@
     <!--main content end-->
 	</div>
 	
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
-	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
 		
 	<!-- jquery ui -->
 	  <script src="../js/jquery-ui-1.9.2.custom.min.js"></script>

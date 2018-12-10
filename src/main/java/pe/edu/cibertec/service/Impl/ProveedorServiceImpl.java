@@ -3,7 +3,6 @@ package pe.edu.cibertec.service.Impl;
 import java.util.List;
 
 import pe.edu.cibertec.bean.ProveedorBean;
-import pe.edu.cibertec.dao.IHistoriaClinicaDAO;
 import pe.edu.cibertec.dao.IProveedorDAO;
 import pe.edu.cibertec.factory.DAOFactory;
 import pe.edu.cibertec.service.ProveedorService;

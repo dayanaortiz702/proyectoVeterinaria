@@ -25,55 +25,49 @@
 		
 		<form action="a_registerProducto.action" class="mt-3">
 			<input type="submit" value="Nuevo Producto" class="btn btn-success"/>		
-		</form>		
-		
-		<s:if test="noData==true">
+		</form>	
 			<table class="table mt-3" >
 				<thead class="thead-dark">
 					<tr>
 						<th scope="col">CODIGO</th>
 						<th scope="col">DESCRIPCION</th>
 						<th scope="col">MARCA</th>
-						<th scope="col">PRECIO DE COMPRA</th>
+						<th scope="col">PRECIO</th>
 						<th scope="col">CATEGORIA</th>
 						<th scope="col">PROVEEDOR</th>
 						<th scope="col">UNIDAD DE MEDIDA</th>
 						<th scope="col">STOCK ACTUAL</th>
 						<th scope="col">STOCK MINIMO</th>
-						<th scope="col">ACCIÓN</th>
+						
+						<th scope="col">ACCION</th>
 					</tr>
 				</thead>
 				<tbody>
-					<s:iterator value="beanList">
+					<s:iterator value="grdProducto" var="item" status="estado">
 						<tr>
-<!-- 						los values son los mismos que los atributos creados en los beans -->
-							<td><s:property value="idProducto" /></td>
-							<td><s:property value="descripcion" /></td>
-							<td><s:property value="idMarca" /></td>
-							<td><s:property value="precioCompra" /></td>
-							<td><s:property value="idCategoria" /></td>
-							<td><s:property value="idProveedor" /></td>
-							<td><s:property value="idUniMedida" /></td>
-							<td><s:property value="stockActual" /></td>
-							<td><s:property value="stockMinimo" /></td>
+							<td scope="row"><s:property value="#item.idProducto" /></td>
+							<td><s:property value="#item.descripcion" /></td>
+							<td><s:property value="#item.marca.descripcion" /></td>
+							<td><s:property value="#item.precioCompra" /></td>
+							<td><s:property value="#item.categoria.categoria" /></td>
+							<td><s:property value="#item.proveedor.razonSocial" /></td>
+							<td><s:property value="#item.unidad.descripcion" /></td>
+							<td><s:property value="#item.stockActual" /></td>
+							<td><s:property value="#item.stockminimo" /></td>
 							<td>
-								<a href="updateProducto.action?submitType=updatedata&idProducto=<s:property value="idProducto"/>">
-									<i class="fas fa-edit"></i>
-								</a>
-								<a href="deleteProducto.action?idProducto=<s:property value="idProducto"/>">
-									<i class="fas fa-trash-alt"></i>
-								</a>
+								<s:a action="updateProducto">
+						      		<s:param name="codigo" value="#item.idProducto"></s:param>
+						      		<i class="fas fa-edit"></i>
+						      	</s:a>
+						      	<s:a action="deleteProducto">
+						      		<s:param name="codigo" value="#item.idProducto"></s:param>
+						      		<i class="fas fa-trash-alt"></i>
+						      	</s:a>
 							</td>
-						</tr>
-					</s:iterator>
-				</tbody>
-			</table>
-		</s:if>
-		<s:else>
-			<div style="color: red;">No existen datos</div>
-		</s:else>
-      		
-      	
+					    </tr>	
+				  	</s:iterator>	       
+				  </tbody>
+				</table>
       </section>
    	  </section>
     <!--main content end-->

@@ -47,14 +47,14 @@
                   <div class="form-group row">
                     <label class="col-sm-2 control-label">Descripcion</label>
                     <div class="col-sm-10">
-                      <input type="text" class="form-control" name="descripcion">
+                      <input type="text" class="form-control" name="registro.descripcion">
                     </div>
                   </div>                  
                   
                   <div class="form-group row">
                     <label class="col-sm-2 control-label">Marca</label>
                     <div class="col-sm-10">
-                    	<input type="text" class="form-control" name="idMarca">
+                    	<s:select name="registro.idMarca" list="cbMarca" listKey="idMarca" listValue="descripcion"  />
                     </div>
                   </div>
                   
@@ -62,28 +62,28 @@
                   <div class="form-group row">
                     <label class="col-sm-2 control-label">Precio</label>
                     <div class="col-sm-10">
-                      <input type="text" class="form-control" name="precio_compra">
+                      <input type="text" class="form-control" name="registro.precioCompra">
                     </div>
                   </div>                             
                   
                   <div class="form-group row">
                     <label class="col-sm-2 control-label">Categoria</label>
                     <div class="col-sm-10">
-                    	<input type="text" class="form-control" name="idCategoria">
+                    	<s:select name="registro.idCategoria" list="cbCategoria" listKey="idCategoria" listValue="categoria"  />
                     </div>
                   </div>               
                   
                   <div class="form-group row">
                     <label class="col-sm-2 control-label">Proveedor</label>
                     <div class="col-sm-10">
-                    	<input type="text" class="form-control" name="idProveedor">
+                    	<s:select name="registro.idProveedor" list="cbProveedor" listKey="idProveedor" listValue="razonSocial"  />
                     </div>
                   </div>
                   
                   <div class="form-group row">
                     <label class="col-sm-2 control-label">Unidad de Medida</label>
                     <div class="col-sm-10">
-                    	<input type="text" class="form-control" name="idUnidad">
+                    	<s:select name="registro.idUniMedida" list="cbUnidad" listKey="idUniMedida" listValue="descripcion"  />
                     </div>
                   </div>
                   
@@ -91,37 +91,26 @@
                   <div class="form-group row">
                     <label class="col-sm-2 control-label">Stock Actual</label>
                     <div class="col-sm-10">
-                      <input type="text" class="form-control" name="stock_actual">
+                      <input type="text" class="form-control" name="registro.stockActual">
                     </div>
                   </div>
                   
                   <div class="form-group row">
                     <label class="col-sm-2 control-label">Stock Minimo</label>
                     <div class="col-sm-10">
-                      <input type="text" class="form-control" name="stock_minimo">
+                      <input type="text" class="form-control" name="registro.stockMinimo">
                     </div>
                   </div>
                   
-                       
                   <div class="form-group row">
                       <div class="col-lg-offset-2 col-lg-10">
                         <button class="btn btn-success" type="submit">Registrar</button>
-                        <s:if test="ctr>0">
-							<span style="color: green;"><s:property value="msg" /></span>
-						</s:if>
-						<s:else>
-							<span style="color: red;"><s:property value="msg" /></span>
-						</s:else>
+                        
                       </div>
-                      	
-                  </div>
-                  
-                </form>               
-	
+               </form>               
 				<form action="listaProducto.jsp">
 					<input type="submit" value="Listar Productos" class="btn btn-info" />		
 				</form>	
-	
               </div>
             </section>
          </div>

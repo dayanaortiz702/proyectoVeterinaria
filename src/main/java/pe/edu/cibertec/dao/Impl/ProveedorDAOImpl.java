@@ -8,10 +8,13 @@ import java.util.List;
 
 import pe.edu.cibertec.bean.ProveedorBean;
 import pe.edu.cibertec.dao.IProveedorDAO;
+import pe.edu.cibertec.dao.ITipoDocumentoDAO;
+import pe.edu.cibertec.factory.DAOFactory;
 import pe.edu.cibertec.factory.conectaDB;
 
 public class ProveedorDAOImpl implements IProveedorDAO{
-
+	DAOFactory factoria = DAOFactory.getFactory(DAOFactory.MYSQL);
+	ITipoDocumentoDAO dao = factoria.getDocumento();
 	@Override
 	public int insertar(ProveedorBean bean) throws Exception {
 		Connection con = null;
@@ -133,6 +136,8 @@ public class ProveedorDAOImpl implements IProveedorDAO{
 				bean = new ProveedorBean();
 				bean.setIdProveedor(rs.getInt("idProveedor"));
 				bean.setIdTipoDocumento(rs.getInt("idTipoDocumento"));
+				bean.setTipoDocumento(dao.consultarDocumentoPK(rs.getInt("idTipoDocumento")));
+				
 				bean.setNroDocumento(rs.getString("nroDocumento"));
 				bean.setRazonSocial(rs.getString("razon_social"));
 				bean.setTelefono(rs.getString("telefono"));

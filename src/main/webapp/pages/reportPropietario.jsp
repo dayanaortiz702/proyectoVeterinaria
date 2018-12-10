@@ -27,7 +27,6 @@
 			<input type="submit" value="Nuevo Propietario" class="btn btn-success"/>		
 		</form>		
 		
-		<s:if test="noData==true">
 			<table class="table mt-3" >
 				<thead class="thead-dark">
 					<tr>
@@ -36,40 +35,37 @@
 						<th scope="col">APELLIDOS</th>
 						<th scope="col">TELEFONO</th>
 						<th scope="col">CORREO</th>
-						<th scope="col">TIPO DOCUMENTO</th>
-						<th scope="col">DNI</th>
-						<th scope="col">ACCION</th>
+						<th scope="col">TIPO DOC.</th>
+						<th scope="col">DOCUMENTO</th>
 						
+						<th scope="col">ACCION</th>
 					</tr>
 				</thead>
 				<tbody>
-					<s:iterator value="beanList">
+					<s:iterator value="grdDocumento" var="item" status="estado">
 						<tr>
-							<td><s:property value="idPropietario" /></td>
-							<td><s:property value="nombres" /></td>
-							<td><s:property value="apellidos" /></td>
-							<td><s:property value="telefono" /></td>
-							<td><s:property value="correo" /></td>
-							<td><s:property value="idTipoDocumento" /></td>
-							<td><s:property value="nroDocumento" /></td>
+							<td scope="row"><s:property value="#item.idPropietario" /></td>
+							<td><s:property value="#item.nombres" /></td>
+							<td><s:property value="#item.apellidos" /></td>
+							<td><s:property value="#item.telefono" /></td>
+							<td><s:property value="#item.correo" /></td>
+							<td><s:property value="#item.tipoDocumento.descripcion" /></td>
+							<td><s:property value="#item.nroDocumento" /></td>
+							
 							<td>
-								<a href="updatePropietario.action?submitType=updatedata&idPropietario=<s:property value="idPropietario"/>">
-									<i class="fas fa-edit"></i>
-								</a>
-								<a href="deletePropietario.action?idPropietario=<s:property value="idPropietario"/>">
-									<i class="fas fa-trash-alt"></i>
-								</a>
+								<s:a action="updatePropietario">
+						      		<s:param name="codigo" value="#item.idPropietario"></s:param>
+						      		<i class="fas fa-edit"></i>
+						      	</s:a>
+						      	<s:a action="deletePropietario">
+						      		<s:param name="codigo" value="#item.idPropietario"></s:param>
+						      		<i class="fas fa-trash-alt"></i>
+						      	</s:a>
 							</td>
-						</tr>
-					</s:iterator>
-				</tbody>
-			</table>
-		</s:if>
-		<s:else>
-			<div style="color: red;">No existen datos</div>
-		</s:else>
-
-      	
+					    </tr>	
+				  	</s:iterator>	       
+				  </tbody>
+				</table>
       	
       </section>
    	  </section>

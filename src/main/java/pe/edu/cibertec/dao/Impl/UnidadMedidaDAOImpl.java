@@ -112,7 +112,7 @@ public class UnidadMedidaDAOImpl implements IUnidadMedidaDAO{
 		List<UnidadMedidaBean> lista = new ArrayList<UnidadMedidaBean>();
 		
 		try {
-			String sql = "select*from tb_unidad_medidad";
+			String sql = "select*from tb_unidad_medida";
 			con = new conectaDB().getConexion();
 			pstm = con.prepareStatement(sql);
 			rs = pstm.executeQuery();

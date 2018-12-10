@@ -21,40 +21,43 @@
 	 <!--main content start-->
     <section id="main-content">
       <section class="wrapper">
-			<h1 style="font-family: 'Anton', sans-serif; color: #088A85;">MANTENEDOR DE PROVEEDORES</h1>
+      	<h1 style="font-family: 'Anton', sans-serif; color: #088A85;">MANTENIMIENTO DE HISTORIAS CLÍNICAS</h1>
 		
-		<form action="a_registerProveedor.action" class="mt-3">
-			<input type="submit" value="Nuevo Proveedor" class="btn btn-success"/>		
+		<form action="a_registerHistoria.action" class="mt-3">
+			<input type="submit" value="Nueva Historia" class="btn btn-success"/>		
 		</form>		
 		
 			<table class="table mt-3" >
 				<thead class="thead-dark">
 					<tr>
 						<th scope="col">CODIGO</th>
-						<th scope="col">TIPO DOC</th>
-						<th scope="col">DOCUMENTO</th>
-						<th scope="col">RAZON SOCIAL</th>
-						<th scope="col">TELEFONO</th>
-						<th scope="col">DIRECCION</th>
+						<th scope="col">FECHA</th>
+						<th scope="col">MOTIVO CONSULTA</th>
+						<th scope="col">TIPO DE PACIENTE</th>
+						<th scope="col">PACIENTE</th>
+						<th scope="col">PROPIETARIO</th>
+						<th scope="col">DISTRITO</th>
+						
 						<th scope="col">ACCION</th>
 					</tr>
 				</thead>
 				<tbody>
-					<s:iterator value="grdProveedor" var="item" status="estado">
+					<s:iterator value="grdHistoria" var="item" status="estado">
 						<tr>
-							<td scope="row"><s:property value="#item.idProveedor" /></td>
-							<td><s:property value="#item.tipoDocumento.descripcion" /></td>
-							<td><s:property value="#item.nroDocumento" /></td>
-							<td><s:property value="#item.razonSocial" /></td>
-							<td><s:property value="#item.telefono" /></td>
-							<td><s:property value="#item.direccion" /></td>
+							<td scope="row"><s:property value="#item.idFicha" /></td>
+							<td><s:property value="#item.fecha" /></td>
+							<td><s:property value="#item.motivoConsulta" /></td>
+							<td><s:property value="#item.tipoPaciente.tipo" /></td>
+							<td><s:property value="#item.paciente.nombre" /></td>
+							<td><s:property value="#item.propietario.nombres" /></td>
+							<td><s:property value="#item.distrito.nombre" /></td>
 							<td>
-								<s:a action="updateProveedor">
-						      		<s:param name="codigo" value="#item.idProveedor"></s:param>
+								<s:a action="updateHistoria">
+						      		<s:param name="codigo" value="#item.idFicha"></s:param>
 						      		<i class="fas fa-edit"></i>
 						      	</s:a>
-						      	<s:a action="deleteProveedor">
-						      		<s:param name="codigo" value="#item.idProveedor"></s:param>
+						      	<s:a action="deleteHistoria">
+						      		<s:param name="codigo" value="#item.idFicha"></s:param>
 						      		<i class="fas fa-trash-alt"></i>
 						      	</s:a>
 							</td>
@@ -62,6 +65,7 @@
 				  	</s:iterator>	       
 				  </tbody>
 				</table>
+			
       </section>
    	  </section>
     <!--main content end-->

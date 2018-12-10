@@ -1,8 +1,6 @@
 <%@taglib prefix="s" uri="/struts-tags"%>
 <%@page import="java.sql.ResultSet"%>
-<!DOCTYPE html>
-<html lang="en">
-
+<html>
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -37,75 +35,89 @@
 	 <!--main content start-->
     <section id="main-content">
       <section class="wrapper">
-		<div class="row container ml-3">
-          <div class="col-lg-10 mx-auto">
-            <section>
-             <h2>Agregar nuevo Propietario</h2><br>
+	<div class="row container mt-2">
+       <div class="col-lg-10 mx-auto">
+          <h2>Modificar Historia Clinica</h2>
+            <section  class="mt-5">
+             
               <div>
-                  <form action="registerPropietario"  class="form-horizontal mt-5" >
-                  <div class="form-group row">
-                    <label class="col-sm-2 control-label">Nombres</label>
+                <form action="updateHistoriaList" method="post"  class="form-horizontal mt-5" >
+                  <input type="hidden"  name="registro.idHistoria" value='<s:property value="registro.idHistoria"/>'>
+                  
+                 <div class="form-group row">
+                    <label class="col-sm-2 control-label">Fecha</label>
                     <div class="col-sm-10">
-                      <input type="text" class="form-control" name="registro.nombres">
+                      <input id="dp2" type="text" value="" size="16" class="form-control" name="registro.fecha" value='<s:property value="registro.fecha"/>'>
+                     
                     </div>
                   </div>
                   
                   <div class="form-group row">
-                    <label class="col-sm-2 control-label">Apellidos</label>
+                    <label class="col-sm-2 control-label">Motivo Consulta</label>
                     <div class="col-sm-10">
-                      <input type="text" class="form-control" name="registro.apellidos">
+                      <input type="text" class="form-control" name="registro.motivoConsulta" value='<s:property value="registro.motivoConsulta"/>'>
                     </div>
                   </div>
+                  
                    <div class="form-group row">
-                    <label class="col-sm-2 control-label">Teléfono</label>
+                    <label class="col-sm-2 control-label">Tipo paciente</label>
                     <div class="col-sm-10">
-                      <input type="text" class="form-control" name="registro.telefono">
+                     <s:select name="registro.idTipoPaciente" list="cbTipoPaciente" listKey="idTipo" listValue="tipo" value='<s:property value="registro.idTipoPaciente"/>' />
                     </div>
                   </div>
                   
                   <div class="form-group row">
-                    <label class="col-sm-2 control-label">Correo</label>
+                    <label class="col-sm-2 control-label">Paciente</label>
                     <div class="col-sm-10">
-                      <input type="text" class="form-control" name="registro.correo">
+                     <s:select name="registro.idPaciente" list="cbPaciente" listKey="idPaciente" listValue="nombre" value='<s:property value="registro.idPaciente"/>' />
                     </div>
                   </div>
                   
                   <div class="form-group row">
-                    <label class="col-sm-2 control-label">Tipo de Documento</label>
+                    <label class="col-sm-2 control-label">Propietario</label>
                     <div class="col-sm-10">
-                    	<s:select name="registro.idTipoDocumento" list="cbDocumento" listKey="idTipoDocumento" listValue="descripcion"  />
+                     <s:select name="registro.idPropietario" list="cbPropietario" listKey="idPropietario" listValue="nombres" value='<s:property value="registro.idPropietario"/>' />
                     </div>
                   </div>
-           
+                                    
                   <div class="form-group row">
-                    <label class="col-sm-2 control-label">Nro de Documento</label>
+                    <label class="col-sm-2 control-label">Distrito</label>
                     <div class="col-sm-10">
-                      <input type="text" class="form-control" name="registro.nroDocumento">
+                     <s:select name="registro.idDistrito" list="cbDistrito" listKey="idDistrito" listValue="nombre"  value='<s:property value="registro.idDistrito"/>'/>
                     </div>
-                  </div>       	
-               
-               <div class="form-group row">
+                  </div>
+                  
+                  
+                  <div class="form-group row">
+                    <label class="col-sm-2 control-label">Usuario</label>
+                    <div class="col-sm-10">
+                       <s:select name="registro.idUsuario" list="cbUsuario" listKey="idUsuario" listValue="usuario" value="registro.idUsuario" />
+                      
+                    </div>
+                  </div>
+                  
+                  
+                  <div class="form-group row">
                       <div class="col-lg-offset-2 col-lg-10">
-                        <button class="btn btn-success" type="submit">Registrar</button>
-                        
-                      </div>
+                        <button name="submitType" class="btn btn-success" type="submit">Modificar</button>                           	              
+                      </div>                      	
+                  </div>                  
                 </form>               
 	
-				<form action="listaPropietario.jsp">
-					<input type="submit" value="Listar Propietario" class="btn btn-info" />		
-				</form>
+				<form action="a_reportHistoria">
+					<input type="submit" value="Listar historias" class="btn btn-info" />		
+				</form>	
 	
-             
               </div>
             </section>
          </div>
-    
        </div>
+
  
        </section>
     
 		
-	     </section>
+	 </section>
    
     <!--main content end-->
 	</div>

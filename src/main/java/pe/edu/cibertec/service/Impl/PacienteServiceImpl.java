@@ -18,7 +18,7 @@ public class PacienteServiceImpl implements PacienteService{
 	@Override
 	public int eliminar(int id) throws Exception {
 		// TODO Auto-generated method stub
-		return eliminar(id);
+		return dao.eliminar(id);
 	}
 	@Override
 	public int actualizar(PacienteBean bean) throws Exception {

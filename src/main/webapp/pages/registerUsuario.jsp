@@ -1,5 +1,4 @@
 <%@taglib prefix="s" uri="/struts-tags"%>
-<%@page import="java.sql.ResultSet"%>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -40,62 +39,47 @@
 		<div class="row container ml-3">
           <div class="col-lg-10 mx-auto">
             <section>
-             <h2>Agregar nuevo Propietario</h2><br>
-              <div>
-                  <form action="registerPropietario"  class="form-horizontal mt-5" >
+             <h2>Agregar nuevo usuario</h2><br>
+              <div >
+                <form action="registerUsuario"  class="form-horizontal mt-5" >
+                 
                   <div class="form-group row">
-                    <label class="col-sm-2 control-label">Nombres</label>
+                    <label class="col-sm-2 control-label">Usuario</label>
                     <div class="col-sm-10">
-                      <input type="text" class="form-control" name="registro.nombres">
+                      <input type="text" class="form-control" name="registro.usuario">
                     </div>
                   </div>
                   
                   <div class="form-group row">
-                    <label class="col-sm-2 control-label">Apellidos</label>
+                    <label class="col-sm-2 control-label">Clave</label>
                     <div class="col-sm-10">
-                      <input type="text" class="form-control" name="registro.apellidos">
+                      <input type="text" class="form-control" name="registro.clave">
                     </div>
                   </div>
+                  
                    <div class="form-group row">
-                    <label class="col-sm-2 control-label">Teléfono</label>
+                    <label class="col-sm-2 control-label">Estado</label>
                     <div class="col-sm-10">
-                      <input type="text" class="form-control" name="registro.telefono">
+                     <s:select name="registro.idEstado" list="cbEstado" listKey="idEstado" listValue="descripcion"  />
                     </div>
                   </div>
                   
+                 
+                                    
                   <div class="form-group row">
-                    <label class="col-sm-2 control-label">Correo</label>
+                    <label class="col-sm-2 control-label">Perfil</label>
                     <div class="col-sm-10">
-                      <input type="text" class="form-control" name="registro.correo">
+                     <s:select name="registro.idPerfil" list="cbPerfil" listKey="idPerfil" listValue="perfil"  />
                     </div>
                   </div>
                   
-                  <div class="form-group row">
-                    <label class="col-sm-2 control-label">Tipo de Documento</label>
-                    <div class="col-sm-10">
-                    	<s:select name="registro.idTipoDocumento" list="cbDocumento" listKey="idTipoDocumento" listValue="descripcion"  />
-                    </div>
-                  </div>
-           
-                  <div class="form-group row">
-                    <label class="col-sm-2 control-label">Nro de Documento</label>
-                    <div class="col-sm-10">
-                      <input type="text" class="form-control" name="registro.nroDocumento">
-                    </div>
-                  </div>       	
-               
-               <div class="form-group row">
-                      <div class="col-lg-offset-2 col-lg-10">
-                        <button class="btn btn-success" type="submit">Registrar</button>
-                        
-                      </div>
+                  
                 </form>               
 	
-				<form action="listaPropietario.jsp">
-					<input type="submit" value="Listar Propietario" class="btn btn-info" />		
-				</form>
+				<form action="listaUsuario.jsp">
+					<input type="submit" value="Listar usuarios" class="btn btn-info" />		
+				</form>	
 	
-             
               </div>
             </section>
          </div>
@@ -110,8 +94,8 @@
     <!--main content end-->
 	</div>
 	
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
-	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
 		
 	<!-- jquery ui -->
 	  <script src="../js/jquery-ui-1.9.2.custom.min.js"></script>

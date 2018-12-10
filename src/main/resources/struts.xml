@@ -57,7 +57,165 @@
 		</action>
 
 		
+		
+		
+		
+		<action name="a_reportHistoria" class="pe.edu.cibertec.action.HistoriaClinicaAction">
+			<result name="success" type="tiles">t_reportHistoria</result>
+		</action>
+		
+		<action name="a_reportHistoria2" class="pe.edu.cibertec.action.HistoriaClinicaAction">
+			<result name="success">/pages/listaHistoria.jsp</result>
+		</action>
+		
+		<action name="a_registerHistoria" method="nuevoHistoria" class="pe.edu.cibertec.action.HistoriaClinicaAction">
+			<result name="success" type="tiles">t_registraHistoria</result>
+		</action>
+		
+		<action name="registerHistoria" class="pe.edu.cibertec.action.HistoriaClinicaAction" method="insertarHistoria">
+			<result name="success">/pages/listaHistoria.jsp</result>
+		</action>
+		
+		<action name="updateHistoria" method="editarHistoria" class="pe.edu.cibertec.action.HistoriaClinicaAction">
+ 			<result name="success" type="tiles">t_actualizaHistoria</result>
+		</action>
+		
+		<action name="updateHistoriaList" method="actualizarHistoria" class="pe.edu.cibertec.action.HistoriaClinicaAction">
+			<result name="success">/pages/listaHistoria.jsp</result>
+		</action>
+		
+		<action name="deleteHistoria" method="eliminarHistoria" class="pe.edu.cibertec.action.HistoriaClinicaAction">
+			<result name="success">/pages/listaHistoria.jsp</result>
+		</action>
+		
+		
+		
 
+		
+		<action name="a_reportPaciente" class="pe.edu.cibertec.action.PacienteAction">
+			<result name="success" type="tiles">t_reportPaciente</result>
+		</action>
+		
+		<action name="a_reportPaciente2" class="pe.edu.cibertec.action.PacienteAction">
+			<result name="success">/pages/listaPaciente.jsp</result>
+		</action>
+		
+		<action name="a_registerPaciente" method="nuevoPaciente" class="pe.edu.cibertec.action.PacienteAction">
+			<result name="success" type="tiles">t_registraPaciente</result>
+		</action>
+		
+		<action name="registerPaciente" class="pe.edu.cibertec.action.PacienteAction" method="insertarPaciente">
+			<result name="success">/pages/listaPaciente.jsp</result>
+		</action>
+		
+		<action name="updatePaciente" method="editarPaciente" class="pe.edu.cibertec.action.PacienteAction">
+ 			<result name="success" type="tiles">t_actualizaPaciente</result>
+		</action>
+		
+		<action name="updatePacienteList" method="actualizarPaciente" class="pe.edu.cibertec.action.PacienteAction">
+			<result name="success">/pages/listaPaciente.jsp</result>
+		</action>
+		
+		<action name="deletePaciente" method="eliminarPaciente" class="pe.edu.cibertec.action.PacienteAction">
+			<result name="success">/pages/listaPaciente.jsp</result>
+		</action>
+		
+
+		
+		
+		<action name="a_reportProducto" class="pe.edu.cibertec.action.ProductoAction">
+			<result name="success" type="tiles">t_reportProducto</result>
+		</action>
+		
+		<action name="a_reportProducto2" class="pe.edu.cibertec.action.ProductoAction">
+			<result name="success">/pages/listaProducto.jsp</result>
+		</action>
+		
+		<action name="a_registerProducto" method="nuevoProducto" class="pe.edu.cibertec.action.ProductoAction">
+			<result name="success" type="tiles">t_registraProducto</result>
+		</action>
+		
+		<action name="registerProducto" class="pe.edu.cibertec.action.ProductoAction" method="insertarProducto">
+			<result name="success">/pages/listaProducto.jsp</result>
+		</action>
+		
+		<action name="updateProducto" method="editarProducto" class="pe.edu.cibertec.action.ProductoAction">
+ 			<result name="success" type="tiles">t_actualizaProducto</result>
+		</action>
+		
+		<action name="updateProductoList" method="actualizarProducto" class="pe.edu.cibertec.action.ProductoAction">
+			<result name="success">/pages/listaProducto.jsp</result>
+		</action>
+		
+		<action name="deleteProducto" method="eliminarProducto" class="pe.edu.cibertec.action.ProductoAction">
+			<result name="success">/pages/listaProducto.jsp</result>
+		</action>
+		
+		
+		
+		
+		<action name="a_reportPropietario" class="pe.edu.cibertec.action.PropietarioAction">
+			<result name="success" type="tiles">t_reportPropietario</result>
+		</action>
+		
+		<action name="a_reportPropietario2" class="pe.edu.cibertec.action.PropietarioAction">
+			<result name="success">/pages/listaPropietario.jsp</result>
+		</action>
+		
+		<action name="a_registerPropietario" method="nuevoPropietario" class="pe.edu.cibertec.action.PropietarioAction">
+			<result name="success" type="tiles">t_registraPropietario</result>
+		</action>
+		
+		<action name="registerPropietario" class="pe.edu.cibertec.action.PropietarioAction" method="insertarPropietario">
+			<result name="success">/pages/listaPropietario.jsp</result>
+		</action>
+		
+		<action name="updatePropietario" method="editarPropietario" class="pe.edu.cibertec.action.PropietarioAction">
+ 			<result name="success" type="tiles">t_actualizaPropietario</result>
+		</action>
+		
+		<action name="updatePropietarioList" method="actualizarPropietario" class="pe.edu.cibertec.action.PropietarioAction">
+			<result name="success">/pages/listaPropietario.jsp</result>
+		</action>
+		
+		<action name="deletePropietario" method="eliminarPropietario" class="pe.edu.cibertec.action.PropietarioAction">
+			<result name="success">/pages/listaPropietario.jsp</result>
+		</action>
+		
+		
+		
+		
+		<action name="a_reportProveedor" class="pe.edu.cibertec.action.ProveedorAction">
+			<result name="success" type="tiles">t_reportProveedor</result>
+		</action>
+		
+		<action name="a_reportProveedor2" class="pe.edu.cibertec.action.ProveedorAction">
+			<result name="success">/pages/listaProveedor.jsp</result>
+		</action>
+		
+		<action name="a_registerProveedor" method="nuevoProveedor" class="pe.edu.cibertec.action.ProveedorAction">
+			<result name="success" type="tiles">t_registraProveedor</result>
+		</action>
+		
+		<action name="registerProveedor" class="pe.edu.cibertec.action.ProveedorAction" method="insertarProveedor">
+			<result name="success">/pages/listaProveedor.jsp</result>
+		</action>
+		
+		<action name="updateProveedor" method="editarProveedor" class="pe.edu.cibertec.action.ProveedorAction">
+ 			<result name="success" type="tiles">t_actualizaProveedor</result>
+		</action>
+		
+		<action name="updateProveedorList" method="actualizarProveedor" class="pe.edu.cibertec.action.ProveedorAction">
+			<result name="success">/pages/listaProveedor.jsp</result>
+		</action>
+		
+		<action name="deleteProveedor" method="eliminarProveedor" class="pe.edu.cibertec.action.ProveedorAction">
+			<result name="success">/pages/listaProveedor.jsp</result>
+		</action>
+		
+		
+		
+		
  </package> 
 	
 

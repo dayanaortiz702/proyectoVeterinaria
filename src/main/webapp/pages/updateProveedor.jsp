@@ -41,19 +41,20 @@
 				<h2>Modificar Proveedor</h2>
               <div >
                 <form action="updateProveedorList" method="post"  class="form-horizontal mt-5" >
-                  <input type="hidden" name="idProveedor" value='<s:property value="idProveedor"/>'>
+                  <input type="hidden" name="registro.idProveedor" value='<s:property value="registro.idProveedor"/>'>
                    
                   <div class="form-group row">
                     <label class="col-sm-2 control-label">Tipo de Documento</label>
                     <div class="col-sm-10">
-                    	<input type="text" class="form-control" name="tipoDoc" value='<s:property value="tipoDoc"/>'>
+                    	<s:select name="registro.idTipoDocumento" list="cbTipoDoc" listKey="idTipoDocumento" listValue="descripcion" value="registro.idTipoDocumento" />
+                      	
                     </div>
                   </div>
                   
                   <div class="form-group row">
                     <label class="col-sm-2 control-label">Nº Documento</label>
                     <div class="col-sm-10">
-                      <input type="text" class="form-control" name="documento" value='<s:property value="documento"/>'>
+                      <input type="text" class="form-control" name="registro.nroDocumento" value='<s:property value="registro.nroDocumento"/>'>
                     </div>
                   </div>
                   
@@ -61,37 +62,29 @@
                   <div class="form-group row">
                     <label class="col-sm-2 control-label">Razon Social</label>
                     <div class="col-sm-10">
-                      <input type="text" class="form-control" name="razonsocial" value='<s:property value="razonsocial"/>'>
+                      <input type="text" class="form-control" name="registro.razonSocial" value='<s:property value="registro.razonSocial"/>'>
                     </div>
                   </div>
                   
                   <div class="form-group row">
                     <label class="col-sm-2 control-label">Teléfono</label>
                     <div class="col-sm-10">
-                      <input type="text" class="form-control" name="telefono" value='<s:property value="telefono"/>'> 
+                      <input type="text" class="form-control" name="registro.telefono" value='<s:property value="registro.telefono"/>'> 
                     </div>
                   </div>
                   
                   <div class="form-group row">
                     <label class="col-sm-2 control-label">Direccion</label>
                     <div class="col-sm-10">
-                      <input type="text" class="form-control" name="direccion" value='<s:property value="direccion"/>'>
+                      <input type="text" class="form-control" name="registro.direccion" value='<s:property value="registro.direccion"/>'>
                     </div>
                   </div>
                   
-                  
-                  
-                  <div class="form-group row">
+                 <div class="form-group row">
                       <div class="col-lg-offset-2 col-lg-10">
-                        <button name="submitType" class="btn btn-success" type="submit">Modificar</button>    
-                       	<s:if test="ctr>0">
-							<span style="color: green;"><s:property value="msg" /></span>
-						</s:if>
-						<s:else>
-							<span style="color: red;"><s:property value="msg" /></span>
-						</s:else>                 
+                        <button name="submitType" class="btn btn-success" type="submit">Modificar</button>                           	              
                       </div>                      	
-                  </div>                  
+                  </div>                    
                 </form>               
 	
 				<form action="a_reportProveedor">

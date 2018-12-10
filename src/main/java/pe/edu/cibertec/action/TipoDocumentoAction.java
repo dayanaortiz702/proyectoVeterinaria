@@ -82,7 +82,7 @@ public class TipoDocumentoAction extends ActionSupport{
 		return SUCCESS;
 	}
 	
-	public String actualizarUsuario() {
+	public String actualizarDocumento() {
 		log.info("En actualizar documento");
 		
 		try {

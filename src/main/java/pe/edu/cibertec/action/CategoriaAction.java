@@ -11,7 +11,7 @@ import pe.edu.cibertec.bean.CategoriaBean;
 import pe.edu.cibertec.service.CategoriaService;
 import pe.edu.cibertec.service.Impl.CategoriaServiceImpl;
 
-public class CategoriaDAO extends ActionSupport{
+public class CategoriaAction extends ActionSupport{
 	
 	/**
 	 * 
@@ -22,10 +22,10 @@ public class CategoriaDAO extends ActionSupport{
 	private CategoriaBean registro = new CategoriaBean();
 	private int codigo;
 	private String mensaje;
-	private static final Log log = LogFactory.getLog(TipoDocumentoAction.class);
+	private static final Log log = LogFactory.getLog(CategoriaAction.class);
 	
 	public String execute(){
-		log.info("En listar cargo");
+		log.info("En listar categoria");
 		
 		try {
 			this.setGrdCategoria(categoriaService.listarTodos());
@@ -36,7 +36,7 @@ public class CategoriaDAO extends ActionSupport{
 		return SUCCESS;
 	}
 	
-	public String nuevoDocumento() {
+	public String nuevoCategoria() {
 		log.info("En nuevo categoria");
 		
 		try {
@@ -48,7 +48,7 @@ public class CategoriaDAO extends ActionSupport{
 		return SUCCESS;
 	}
 	
-	public String insertarDocumento() {
+	public String insertarCategoria() {
 		log.info("En insertar categoria");
 		try {
 			categoriaService.insertar(registro);
@@ -58,7 +58,7 @@ public class CategoriaDAO extends ActionSupport{
 		return execute();
 	}
 	
-	public String eliminarDocumento() {
+	public String eliminarCategoria() {
 		log.info("En eliminar categoria");
 		
 		try {
@@ -71,7 +71,7 @@ public class CategoriaDAO extends ActionSupport{
 		return execute();
 	}
 	
-	public String editarDocumento() {
+	public String editarCategoria() {
 		log.info("En editar categoria");
 		
 		try {
@@ -83,7 +83,7 @@ public class CategoriaDAO extends ActionSupport{
 		return SUCCESS;
 	}
 	
-	public String actualizarUsuario() {
+	public String actualizarCategoria() {
 		log.info("En actualizar categoria");
 		
 		try {
